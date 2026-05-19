@@ -612,11 +612,13 @@ def write_topology(path: Path, args: argparse.Namespace) -> None:
         hosts_tor0, hosts_tor1 = topology["hosts_per_tor"]
         tor0_id, tor1_id = topology["tor_ids"]
         spine_id = topology["spine_id"]
-        total_hosts = topology["total_hosts"]
         total_nodes = topology["total_nodes"]
-        # Header: total_nodes  num_switches  switch_ids...
-        # Switches: ToR0, ToR1, Spine
-        lines = [f"{total_nodes} 3 {total_hosts} {total_hosts + 1} {total_hosts + 2}",
+        # NS-3 RDMA topo format:
+        #   Line 1: num_nodes  num_switches  num_links
+        #   Line 2: <switch_ids...>
+        #   Lines 3+: <src> <dst> <rate> <delay> <error_rate>  (one per link)
+        num_links = hosts_tor0 + hosts_tor1 + 2  # host links + 2 ToR<->Spine
+        lines = [f"{total_nodes} 3 {num_links}",
                  f"{tor0_id} {tor1_id} {spine_id}"]
         for host in range(hosts_tor0):
             lines.append(f"{host} {tor0_id} {host_rate} {delay} 0")

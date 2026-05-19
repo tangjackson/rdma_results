@@ -187,10 +187,15 @@ def gen_config(mix_dir: Path, args: argparse.Namespace, ranks: int) -> str:
 
 
 def run_simulator(mix_dir: Path, prefix: str, template: str) -> None:
+    # Run from the parent of mix/ (typically simulation/) so that the user's
+    # ./waf is on the working directory. The config file path is absolute
+    # and the config's TOPOLOGY_FILE / FLOW_FILE / ... entries are relative
+    # like 'mix/topo_X.txt' -- which resolve correctly when cwd is the parent
+    # of mix/.
     config = (mix_dir / f"config_{prefix}.txt").resolve()
     cmd = template.format(config=str(config))
     print(f"[sim] {cmd}", flush=True)
-    subprocess.run(shlex.split(cmd), check=True, cwd=mix_dir)
+    subprocess.run(shlex.split(cmd), check=True, cwd=mix_dir.parent)
 
 
 def run_collector(mix_dir: Path, prefix: str) -> Path:

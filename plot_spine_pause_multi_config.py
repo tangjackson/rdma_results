@@ -73,11 +73,24 @@ def parse_args() -> argparse.Namespace:
                                  "pause_spine_to_tor", "pause_intra_tor"),
                         help="Which PFC bucket to plot. Default pause_tor_to_spine "
                              "(= PAUSE on Spine P1 in 3-tier mode).")
+    parser.add_argument("--threshold-kind", default="auto",
+                        choices=("auto", "n_star", "n_double_star", "both"),
+                        help="Which model threshold to draw as the dashed vertical. "
+                             "'auto' picks N* for local-pause metrics and N** for "
+                             "propagation metrics. 'both' draws both lines per config.")
     parser.add_argument("--y-log", action="store_true",
                         help="Use symlog y-axis (helps when one config explodes).")
     parser.add_argument("--out", default=None)
     parser.add_argument("--mix-dir", default=None)
     return parser.parse_args()
+
+
+def select_threshold_kind(metric: str, requested: str) -> str:
+    if requested != "auto":
+        return requested
+    # pause_intra_tor is the only metric that the local fluid model (N*)
+    # actually predicts. Everything else is propagation; use N**.
+    return "n_star" if metric == "pause_intra_tor" else "n_double_star"
 
 
 def split_list(spec: Optional[str], count: int, default: float, kind: type = float) -> List[float]:
@@ -119,6 +132,7 @@ def main() -> int:
     buffers = split_list(args.buffer_mb, len(tags), 2.0)
     headrooms = split_list(args.headroom_kb, len(tags), 30.0)
 
+    threshold_kind = select_threshold_kind(args.metric, args.threshold_kind)
     fig, ax = plt.subplots(figsize=(9.0, 5.0))
     summary_lines: List[Dict[str, object]] = []
     for idx, tag in enumerate(tags):
@@ -142,15 +156,21 @@ def main() -> int:
         )
         model = n_threshold_model.compute(inputs)
         n_star = model["n_star_real"]
+        n_double_star = model["n_double_star_real"]
         # First N where the metric is > 0 -- the empirical onset.
         n_empirical = next((int(r["ranks"]) for r, y in zip(rows, ys) if y > 0), None)
 
         color = DEFAULT_COLORS[idx % len(DEFAULT_COLORS)]
         ax.plot(ranks, ys, color=color, marker="o", linewidth=1.8,
-                label=f"{labels[idx]} (eta={etas[idx]}, buf={buffers[idx]}MB)")
-        ax.axvline(n_star, color=color, linestyle="--", linewidth=1.2,
-                   alpha=0.7,
-                   label=f"  N* model = {n_star:.2f}")
+                label=f"{labels[idx]} (eta={etas[idx]}, buf={buffers[idx]}MB, Q={q_pfc/1024:.0f}KB)")
+        if threshold_kind in ("n_star", "both"):
+            ax.axvline(n_star, color=color, linestyle="--", linewidth=1.2,
+                       alpha=0.7,
+                       label=f"  N* = {n_star:.2f}")
+        if threshold_kind in ("n_double_star", "both"):
+            ax.axvline(n_double_star, color=color, linestyle=":", linewidth=1.4,
+                       alpha=0.85,
+                       label=f"  N** = {n_double_star:.2f}")
         summary_lines.append({
             "tag": tag,
             "label": labels[idx],
