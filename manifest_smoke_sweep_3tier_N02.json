@@ -1,0 +1,138 @@
+{
+  "prefix": "smoke_sweep_3tier_N02",
+  "topology": {
+    "kind": "3tier-spine-incast",
+    "hosts_per_tor": [
+      2,
+      4
+    ],
+    "tor_ids": [
+      6,
+      7
+    ],
+    "tor_uplink_if_index": [
+      2,
+      4
+    ],
+    "spine_id": 8,
+    "spine_ports_to_tor": {
+      "6": 0,
+      "7": 1
+    },
+    "total_hosts": 6,
+    "total_nodes": 9
+  },
+  "scenario": {
+    "alltoall_enabled": false,
+    "alltoall_rack": null,
+    "alltoall_nodes": 0,
+    "alltoall_hotspot_nodes": [],
+    "alltoall_flow_bytes": 65536,
+    "alltoall_pg": 3,
+    "alltoall_rounds": 1,
+    "alltoall_base_us": 2.0,
+    "alltoall_round_gap_us": 2.0,
+    "alltoall_src_stagger_us": 0.0,
+    "pipeline_nodes_per_rack": 16,
+    "pipeline_enabled": false,
+    "pipeline_rounds": 8,
+    "pipeline_flow_bytes": 2097152,
+    "pipeline_pg": 3,
+    "pipeline_base_us": 0.0,
+    "pipeline_gap_us": 1.0,
+    "pipeline_auto_gap": false,
+    "pipeline_ring_layout": "interleaved",
+    "pipeline_ring": [],
+    "pipeline_expected": {
+      "concurrent_flows_per_round": 0,
+      "cross_tor_flows_per_round": 0,
+      "tor_0_to_1_bytes_per_round": 0,
+      "tor_1_to_0_bytes_per_round": 0,
+      "host_max_tx_bytes_per_round": 0,
+      "host_max_rx_bytes_per_round": 0,
+      "aggregate_bottleneck_gbps": null,
+      "per_flow_bottleneck_gbps": null,
+      "critical_tor_serialize_us": 0.0,
+      "critical_host_serialize_us": 0.0,
+      "critical_serialize_us": 0.0,
+      "one_way_path_delay_us": 0.0,
+      "ideal_round_duration_us": null,
+      "configured_gap_us": 1.0,
+      "rounds_overlap_expected": false
+    },
+    "timeline": {
+      "pipeline": {
+        "first_start_ns": null,
+        "last_start_ns": null
+      },
+      "alltoall": {
+        "first_start_ns": null,
+        "last_start_ns": null
+      }
+    },
+    "host_link_rate_gbps": 40.0,
+    "tor_link_rate_gbps": 100.0,
+    "min_link_rate_gbps": 40.0,
+    "link_delay_us": 1.0,
+    "buffer_size_mb": 2,
+    "enable_pfc": true,
+    "enable_trace": false,
+    "pfc_xoff_bytes": 320000,
+    "pfc_xon_bytes": 160000,
+    "stop_time_s": 0.020002
+  },
+  "files": {
+    "topology": "mix/topo_smoke_sweep_3tier_N02.txt",
+    "flow": "mix/flow_smoke_sweep_3tier_N02.txt",
+    "config": "mix/config_smoke_sweep_3tier_N02.txt",
+    "trace_input": "mix/trace_smoke_sweep_3tier_N02.txt",
+    "trace_output": "mix/mix_smoke_sweep_3tier_N02.tr",
+    "fct": "mix/fct_smoke_sweep_3tier_N02.txt",
+    "pfc": "mix/pfc_smoke_sweep_3tier_N02.txt",
+    "qlen": "mix/qlen_smoke_sweep_3tier_N02.txt",
+    "summary_txt": "mix/summary_smoke_sweep_3tier_N02.txt",
+    "summary_json": "mix/summary_smoke_sweep_3tier_N02.json"
+  },
+  "flows": [
+    {
+      "flow_id": "normal-s1-r1",
+      "pattern": "normal",
+      "src": 1,
+      "dst": 3,
+      "size_bytes": 4194304,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 31000
+    },
+    {
+      "flow_id": "victim-s0-r0",
+      "pattern": "victim",
+      "src": 0,
+      "dst": 2,
+      "size_bytes": 4194304,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 30000
+    },
+    {
+      "flow_id": "incast-r000-s00",
+      "pattern": "incast",
+      "src": 4,
+      "dst": 2,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 32000
+    },
+    {
+      "flow_id": "incast-r000-s01",
+      "pattern": "incast",
+      "src": 5,
+      "dst": 2,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 32001
+    }
+  ]
+}

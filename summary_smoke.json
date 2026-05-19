@@ -1,0 +1,292 @@
+{
+  "prefix": "smoke",
+  "scenario": {
+    "alltoall_hotspot_nodes": [
+      24,
+      25,
+      26,
+      27
+    ],
+    "host_link_rate_gbps": 40.0,
+    "tor_link_rate_gbps": 100.0,
+    "min_link_rate_gbps": 40.0,
+    "buffer_size_mb": 2,
+    "enable_pfc": true,
+    "pfc_xoff_bytes": 320000,
+    "pfc_xon_bytes": 160000,
+    "stop_time_s": 0.001,
+    "alltoall_enabled": true,
+    "alltoall_rack": 1,
+    "alltoall_nodes": 4,
+    "alltoall_flow_bytes": 65536,
+    "alltoall_pg": 3,
+    "alltoall_rounds": 1,
+    "alltoall_base_us": 2.0,
+    "alltoall_round_gap_us": 2.0,
+    "alltoall_src_stagger_us": 0.0,
+    "pipeline_enabled": false,
+    "pipeline_nodes_per_rack": 8,
+    "pipeline_rounds": 1,
+    "pipeline_flow_bytes": 2097152,
+    "pipeline_pg": 3,
+    "pipeline_base_us": 0.0,
+    "pipeline_gap_us": 1.0,
+    "pipeline_auto_gap": false,
+    "pipeline_ring_layout": "interleaved",
+    "pipeline_ring": [],
+    "pipeline_expected": null,
+    "timeline": {
+      "pipeline": {
+        "first_start_ns": null,
+        "last_start_ns": null
+      },
+      "alltoall": {
+        "first_start_ns": 2000,
+        "last_start_ns": 2000
+      }
+    },
+    "enable_trace": false
+  },
+  "fct": {
+    "expected_flows": 1,
+    "completed_flows": 1,
+    "unmatched_rows": 0,
+    "patterns": {
+      "overall": {
+        "expected_flows": 1,
+        "completed_flows": 1,
+        "avg_fct_us": 5.0,
+        "p50_fct_us": 5.0,
+        "p95_fct_us": 5.0,
+        "p99_fct_us": 5.0,
+        "avg_slowdown": 5.0,
+        "avg_per_flow_goodput_gbps": 104.8576,
+        "aggregate_goodput_gbps": 104.8576,
+        "active_window_us": 5.0
+      },
+      "pipeline": {
+        "expected_flows": 0,
+        "completed_flows": 0,
+        "avg_fct_us": null,
+        "p50_fct_us": null,
+        "p95_fct_us": null,
+        "p99_fct_us": null,
+        "avg_slowdown": null,
+        "avg_per_flow_goodput_gbps": null,
+        "aggregate_goodput_gbps": null,
+        "active_window_us": null
+      },
+      "pipeline_hotspot_touch": {
+        "expected_flows": 0,
+        "completed_flows": 0,
+        "avg_fct_us": null,
+        "p50_fct_us": null,
+        "p95_fct_us": null,
+        "p99_fct_us": null,
+        "avg_slowdown": null,
+        "avg_per_flow_goodput_gbps": null,
+        "aggregate_goodput_gbps": null,
+        "active_window_us": null
+      },
+      "pipeline_non_hotspot": {
+        "expected_flows": 0,
+        "completed_flows": 0,
+        "avg_fct_us": null,
+        "p50_fct_us": null,
+        "p95_fct_us": null,
+        "p99_fct_us": null,
+        "avg_slowdown": null,
+        "avg_per_flow_goodput_gbps": null,
+        "aggregate_goodput_gbps": null,
+        "active_window_us": null
+      },
+      "alltoall": {
+        "expected_flows": 1,
+        "completed_flows": 1,
+        "avg_fct_us": 5.0,
+        "p50_fct_us": 5.0,
+        "p95_fct_us": 5.0,
+        "p99_fct_us": 5.0,
+        "avg_slowdown": 5.0,
+        "avg_per_flow_goodput_gbps": 104.8576,
+        "aggregate_goodput_gbps": 104.8576,
+        "active_window_us": 5.0
+      }
+    }
+  },
+  "pfc": {
+    "pause_events": 4,
+    "resume_events": 4,
+    "ports_with_pause": 4,
+    "has_qindex": true,
+    "by_pg": {
+      "3": {
+        "qindex": 3,
+        "pause_events": 4,
+        "resume_events": 4,
+        "paused_time_ns": 360,
+        "max_pause_ns": 200,
+        "ports_with_pause": 4
+      }
+    },
+    "by_hop": {
+      "pause_intra_tor": {
+        "pause_events": 2,
+        "resume_events": 2,
+        "paused_time_ns": 60,
+        "max_pause_ns": 50,
+        "ports_with_pause": 2,
+        "first_pause_ns": 2000,
+        "last_resume_ns": 3050
+      },
+      "pause_inter_tor": {
+        "pause_events": 1,
+        "resume_events": 1,
+        "paused_time_ns": 200,
+        "max_pause_ns": 200,
+        "ports_with_pause": 1,
+        "first_pause_ns": 5000,
+        "last_resume_ns": 5200
+      },
+      "pause_host_to_tor": {
+        "pause_events": 1,
+        "resume_events": 1,
+        "paused_time_ns": 100,
+        "max_pause_ns": 100,
+        "ports_with_pause": 1,
+        "first_pause_ns": 6000,
+        "last_resume_ns": 6100
+      },
+      "pause_other": {
+        "pause_events": 0,
+        "resume_events": 0,
+        "paused_time_ns": 0,
+        "max_pause_ns": 0,
+        "ports_with_pause": 0,
+        "first_pause_ns": null,
+        "last_resume_ns": null
+      }
+    },
+    "first_pause_ns": 2000,
+    "last_resume_ns": 6100,
+    "active_window_ns": 4100,
+    "top_paused_ports": [
+      {
+        "node_id": 33,
+        "node_type": 1,
+        "if_index": 16,
+        "pause_events": 1,
+        "resume_events": 1,
+        "paused_time_ns": 200,
+        "max_pause_ns": 200
+      },
+      {
+        "node_id": 25,
+        "node_type": 0,
+        "if_index": 1,
+        "pause_events": 1,
+        "resume_events": 1,
+        "paused_time_ns": 100,
+        "max_pause_ns": 100
+      },
+      {
+        "node_id": 33,
+        "node_type": 1,
+        "if_index": 8,
+        "pause_events": 1,
+        "resume_events": 1,
+        "paused_time_ns": 50,
+        "max_pause_ns": 50
+      },
+      {
+        "node_id": 32,
+        "node_type": 1,
+        "if_index": 0,
+        "pause_events": 1,
+        "resume_events": 1,
+        "paused_time_ns": 10,
+        "max_pause_ns": 10
+      }
+    ]
+  },
+  "qlen": {
+    "max_queue_kb": null,
+    "switch_id": null,
+    "if_index": null,
+    "sample_time_ns": null,
+    "sample_blocks": 1,
+    "ports_observed": 0,
+    "busiest_peak_port": null,
+    "busiest_avg_port": null
+  },
+  "trigger_timing": {
+    "first_pause_ns": 2000,
+    "pipeline_first_start_ns": null,
+    "alltoall_first_start_ns": 2000,
+    "delta_vs_pipeline_us": null,
+    "delta_vs_alltoall_us": 0.0,
+    "relation_to_alltoall": "after_alltoall_start"
+  },
+  "table_metrics": {
+    "overall": {
+      "completed_flows": 1,
+      "expected_flows": 1,
+      "avg_fct_us": 5.0,
+      "p95_fct_us": 5.0,
+      "aggregate_goodput_gbps": 104.8576,
+      "cluster_throughput_gbps": null,
+      "busiest_link_kind": null,
+      "busiest_link_id": null,
+      "busiest_link_gbps": null,
+      "busiest_link_util_pct": null
+    },
+    "pipeline": {
+      "completed_flows": 0,
+      "expected_flows": 0,
+      "avg_fct_us": null,
+      "p95_fct_us": null,
+      "aggregate_goodput_gbps": null,
+      "cluster_throughput_gbps": null,
+      "busiest_link_kind": null,
+      "busiest_link_id": null,
+      "busiest_link_gbps": null,
+      "busiest_link_util_pct": null
+    },
+    "pipeline_hotspot_touch": {
+      "completed_flows": 0,
+      "expected_flows": 0,
+      "avg_fct_us": null,
+      "p95_fct_us": null,
+      "aggregate_goodput_gbps": null,
+      "cluster_throughput_gbps": null,
+      "busiest_link_kind": null,
+      "busiest_link_id": null,
+      "busiest_link_gbps": null,
+      "busiest_link_util_pct": null
+    },
+    "pipeline_non_hotspot": {
+      "completed_flows": 0,
+      "expected_flows": 0,
+      "avg_fct_us": null,
+      "p95_fct_us": null,
+      "aggregate_goodput_gbps": null,
+      "cluster_throughput_gbps": null,
+      "busiest_link_kind": null,
+      "busiest_link_id": null,
+      "busiest_link_gbps": null,
+      "busiest_link_util_pct": null
+    },
+    "alltoall": {
+      "completed_flows": 1,
+      "expected_flows": 1,
+      "avg_fct_us": 5.0,
+      "p95_fct_us": 5.0,
+      "aggregate_goodput_gbps": 104.8576,
+      "cluster_throughput_gbps": null,
+      "busiest_link_kind": null,
+      "busiest_link_id": null,
+      "busiest_link_gbps": null,
+      "busiest_link_util_pct": null
+    }
+  }
+}

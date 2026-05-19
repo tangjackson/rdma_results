@@ -1,0 +1,24 @@
+Experiment: smoke
+alltoall_hotspot_nodes: 24 25 26 27
+flow_queues: pipeline_pg=3 alltoall_pg=3
+overall: 1/1 completed, avg_fct=5.00 us, p95_fct=5.00 us, aggregate_goodput=104.86 Gbps
+pipeline: 0/0 completed, avg_fct=n/a us, p95_fct=n/a us, aggregate_goodput=n/a Gbps
+pipeline_hotspot_touch: 0/0 completed, avg_fct=n/a us, p95_fct=n/a us, aggregate_goodput=n/a Gbps
+pipeline_non_hotspot: 0/0 completed, avg_fct=n/a us, p95_fct=n/a us, aggregate_goodput=n/a Gbps
+alltoall: 1/1 completed, avg_fct=5.00 us, p95_fct=5.00 us, aggregate_goodput=104.86 Gbps
+pfc: pause_events=4, resume_events=4, ports_with_pause=4
+pfc_by_pg: pg3=4 pauses/4 ports
+pfc_by_hop: pause_intra_tor=2/2ports@2.00us pause_inter_tor=1/1ports@5.00us pause_host_to_tor=1/1ports@6.00us
+trigger_timing: first_pause_ns=2000 pipeline_first_start_ns=None alltoall_first_start_ns=2000 delta_vs_pipeline_us=n/a delta_vs_alltoall_us=0.00 relation_to_alltoall=after_alltoall_start
+table_metric_overall: completed=1/1 avg_fct_us=5.00 p95_fct_us=5.00 aggregate_goodput_gbps=104.86 cluster_throughput_gbps=n/a busiest_link=n/a
+table_metric_pipeline: completed=0/0 avg_fct_us=n/a p95_fct_us=n/a aggregate_goodput_gbps=n/a cluster_throughput_gbps=n/a busiest_link=n/a
+table_metric_pipeline_hotspot_touch: completed=0/0 avg_fct_us=n/a p95_fct_us=n/a aggregate_goodput_gbps=n/a cluster_throughput_gbps=n/a busiest_link=n/a
+table_metric_pipeline_non_hotspot: completed=0/0 avg_fct_us=n/a p95_fct_us=n/a aggregate_goodput_gbps=n/a cluster_throughput_gbps=n/a busiest_link=n/a
+table_metric_alltoall: completed=1/1 avg_fct_us=5.00 p95_fct_us=5.00 aggregate_goodput_gbps=104.86 cluster_throughput_gbps=n/a busiest_link=n/a
+top_pfc_port: node=33 if=16 pauses=1 paused_time_us=0.20 max_pause_us=0.20
+top_pfc_port: node=25 if=1 pauses=1 paused_time_us=0.10 max_pause_us=0.10
+top_pfc_port: node=33 if=8 pauses=1 paused_time_us=0.05 max_pause_us=0.05
+top_pfc_port: node=32 if=0 pauses=1 paused_time_us=0.01 max_pause_us=0.01
+queue: max_queue_kb=None switch=None if=None time_ns=None sample_blocks=1 ports_observed=0
+queue_peak_port: n/a
+queue_avg_port: n/a

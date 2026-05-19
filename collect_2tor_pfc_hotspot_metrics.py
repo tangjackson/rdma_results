@@ -18,7 +18,96 @@ from typing import Dict, List, Optional, Sequence, Tuple
 
 
 HOSTS_PER_TOR = 16
-TRACE_PATTERNS = ("overall", "pipeline", "pipeline_hotspot_touch", "pipeline_non_hotspot", "alltoall")
+TRACE_PATTERNS = (
+    "overall",
+    "pipeline", "pipeline_hotspot_touch", "pipeline_non_hotspot",
+    "alltoall",
+    "victim", "normal", "incast",
+)
+
+# Per-hop PFC classification buckets.
+#   pause_intra_tor    — Receiver-side ToR port -> host (local, expected)
+#   pause_inter_tor    — 2-ToR direct: ToR -> other ToR (propagated)
+#   pause_tor_to_spine — 3-tier: ToR -> Spine uplink. This is the "PAUSE on
+#                        Spine P1" the new experiment measures: the spine
+#                        receives this PAUSE from the ToR. In the PFC log
+#                        it is the ToR emitting on its uplink port.
+#   pause_spine_to_tor — 3-tier: Spine -> ToR (far propagation back to
+#                        senders on the other rack).
+#   pause_host_to_tor  — Host NIC -> its ToR (host-emitted PFC, if any).
+PFC_HOP_BUCKETS = (
+    "pause_intra_tor",
+    "pause_inter_tor",
+    "pause_tor_to_spine",
+    "pause_spine_to_tor",
+    "pause_host_to_tor",
+    "pause_other",
+)
+
+
+def _build_classifier_index(topology: Optional[dict]) -> dict:
+    """Pre-compute O(1) maps used by classify_pfc_hop.
+
+    Falls back to the legacy 2-ToR layout (TOR_A=32, TOR_B=33, uplink at
+    if_index=HOSTS_PER_TOR) when no topology block is present.
+    """
+    if not topology:
+        return {
+            "kind": "2tor-alltoall-pipeline",
+            "tor_uplink_by_id": {32: HOSTS_PER_TOR, 33: HOSTS_PER_TOR},
+            "spine_ids": set(),
+        }
+    kind = topology.get("kind", "2tor-alltoall-pipeline")
+    tor_ids = list(topology.get("tor_ids") or [])
+    uplinks = list(topology.get("tor_uplink_if_index") or [])
+    tor_uplink_by_id = {int(tor): int(uplinks[i]) for i, tor in enumerate(tor_ids)
+                        if i < len(uplinks)}
+    spine_id = topology.get("spine_id")
+    spine_ids = {int(spine_id)} if spine_id is not None else set()
+    return {
+        "kind": kind,
+        "tor_uplink_by_id": tor_uplink_by_id,
+        "spine_ids": spine_ids,
+    }
+
+
+def classify_pfc_hop(
+    node_id: int,
+    node_type: int,
+    if_index: int,
+    classifier: Optional[dict] = None,
+) -> str:
+    """Map a (node, port) pair to one of the PFC_HOP_BUCKETS.
+
+    Hosts (node_type==0) always classify as host_to_tor. Switches need
+    topology context: a ToR's host-facing ports vs its uplink port; a
+    Spine's downstream ports back to ToRs. `classifier` is the dict
+    produced by _build_classifier_index. When omitted the legacy 2-ToR
+    direct mapping is used.
+    """
+    if node_type == 0:
+        return "pause_host_to_tor"
+    if node_type != 1:
+        return "pause_other"
+    cls = classifier or _build_classifier_index(None)
+    if node_id in cls["spine_ids"]:
+        return "pause_spine_to_tor"
+    uplink = cls["tor_uplink_by_id"].get(node_id)
+    if uplink is None:
+        # Unknown switch (no topology metadata available): fall back to
+        # the legacy if_index heuristic.
+        if 0 <= if_index < HOSTS_PER_TOR:
+            return "pause_intra_tor"
+        if if_index == HOSTS_PER_TOR:
+            if cls["kind"] == "3tier-spine-incast":
+                return "pause_tor_to_spine"
+            return "pause_inter_tor"
+        return "pause_other"
+    if if_index == uplink:
+        return "pause_tor_to_spine" if cls["kind"] == "3tier-spine-incast" else "pause_inter_tor"
+    if 0 <= if_index < uplink:
+        return "pause_intra_tor"
+    return "pause_other"
 
 
 def parse_args() -> argparse.Namespace:
@@ -219,9 +308,13 @@ def summarize_fct(fct_path: Path, flows: Sequence[dict], hotspot_nodes: Sequence
         "pipeline_hotspot_touch": 0,
         "pipeline_non_hotspot": 0,
         "alltoall": 0,
+        "victim": 0,
+        "normal": 0,
+        "incast": 0,
     }
     for flow in flows:
-        expected[flow["pattern"]] += 1
+        # Accept unknown patterns gracefully (won't aggregate but won't crash).
+        expected[flow["pattern"]] = expected.get(flow["pattern"], 0) + 1
         if flow["pattern"] == "pipeline":
             if flow["src"] in hotspot_set or flow["dst"] in hotspot_set:
                 expected["pipeline_hotspot_touch"] += 1
@@ -234,6 +327,9 @@ def summarize_fct(fct_path: Path, flows: Sequence[dict], hotspot_nodes: Sequence
         "pipeline_hotspot_touch": [],
         "pipeline_non_hotspot": [],
         "alltoall": [],
+        "victim": [],
+        "normal": [],
+        "incast": [],
     }
     unmatched = 0
 
@@ -272,7 +368,7 @@ def summarize_fct(fct_path: Path, flows: Sequence[dict], hotspot_nodes: Sequence
             }
             by_pattern["overall"].append(record)
             if flow is not None:
-                by_pattern[flow["pattern"]].append(record)
+                by_pattern.setdefault(flow["pattern"], []).append(record)
                 if flow["pattern"] == "pipeline":
                     if flow["src"] in hotspot_set or flow["dst"] in hotspot_set:
                         by_pattern["pipeline_hotspot_touch"].append(record)
@@ -313,11 +409,15 @@ def summarize_fct(fct_path: Path, flows: Sequence[dict], hotspot_nodes: Sequence
             "pipeline_hotspot_touch": rollup(by_pattern["pipeline_hotspot_touch"], "pipeline_hotspot_touch"),
             "pipeline_non_hotspot": rollup(by_pattern["pipeline_non_hotspot"], "pipeline_non_hotspot"),
             "alltoall": rollup(by_pattern["alltoall"], "alltoall"),
+            "victim": rollup(by_pattern["victim"], "victim"),
+            "normal": rollup(by_pattern["normal"], "normal"),
+            "incast": rollup(by_pattern["incast"], "incast"),
         },
     }
 
 
-def summarize_pfc(pfc_path: Path) -> Dict[str, object]:
+def summarize_pfc(pfc_path: Path, topology: Optional[dict] = None) -> Dict[str, object]:
+    classifier = _build_classifier_index(topology)
     active_pause: Dict[Tuple[int, int, int], int] = {}
     by_port: Dict[Tuple[int, int], dict] = {}
     by_pg: Dict[int, dict] = {}
@@ -326,6 +426,18 @@ def summarize_pfc(pfc_path: Path) -> Dict[str, object]:
     first_pause_ns = None
     last_resume_ns = None
     has_qindex = False
+    by_hop: Dict[str, dict] = {
+        bucket: {
+            "pause_events": 0,
+            "resume_events": 0,
+            "paused_time_ns": 0,
+            "max_pause_ns": 0,
+            "ports_with_pause": set(),
+            "first_pause_ns": None,
+            "last_resume_ns": None,
+        }
+        for bucket in PFC_HOP_BUCKETS
+    }
 
     with pfc_path.open(encoding="ascii") as handle:
         for raw_line in handle:
@@ -363,6 +475,8 @@ def summarize_pfc(pfc_path: Path) -> Dict[str, object]:
                     "ports_with_pause": set(),
                 },
             )
+            hop_bucket = classify_pfc_hop(node_id, node_type, if_index, classifier)
+            hop_stats = by_hop[hop_bucket]
             if event_type == 1:
                 pause_events += 1
                 stats["pause_events"] += 1
@@ -371,6 +485,10 @@ def summarize_pfc(pfc_path: Path) -> Dict[str, object]:
                 if first_pause_ns is None:
                     first_pause_ns = time_ns
                 active_pause.setdefault(active_key, time_ns)
+                hop_stats["pause_events"] += 1
+                hop_stats["ports_with_pause"].add(key)
+                if hop_stats["first_pause_ns"] is None:
+                    hop_stats["first_pause_ns"] = time_ns
             else:
                 resume_events += 1
                 stats["resume_events"] += 1
@@ -383,6 +501,10 @@ def summarize_pfc(pfc_path: Path) -> Dict[str, object]:
                     stats["max_pause_ns"] = max(stats["max_pause_ns"], duration)
                     pg_stats["paused_time_ns"] += duration
                     pg_stats["max_pause_ns"] = max(pg_stats["max_pause_ns"], duration)
+                    hop_stats["paused_time_ns"] += duration
+                    hop_stats["max_pause_ns"] = max(hop_stats["max_pause_ns"], duration)
+                hop_stats["resume_events"] += 1
+                hop_stats["last_resume_ns"] = time_ns
 
     top_ports = sorted(
         by_port.values(),
@@ -400,12 +522,25 @@ def summarize_pfc(pfc_path: Path) -> Dict[str, object]:
         }
         for qindex, item in sorted(by_pg.items())
     }
+    by_hop_output = {
+        bucket: {
+            "pause_events": item["pause_events"],
+            "resume_events": item["resume_events"],
+            "paused_time_ns": item["paused_time_ns"],
+            "max_pause_ns": item["max_pause_ns"],
+            "ports_with_pause": len(item["ports_with_pause"]),
+            "first_pause_ns": item["first_pause_ns"],
+            "last_resume_ns": item["last_resume_ns"],
+        }
+        for bucket, item in by_hop.items()
+    }
     return {
         "pause_events": pause_events,
         "resume_events": resume_events,
         "ports_with_pause": sum(1 for item in by_port.values() if item["pause_events"] > 0),
         "has_qindex": has_qindex,
         "by_pg": by_pg_output,
+        "by_hop": by_hop_output,
         "first_pause_ns": first_pause_ns,
         "last_resume_ns": last_resume_ns,
         "active_window_ns": (last_resume_ns - first_pause_ns) if first_pause_ns is not None and last_resume_ns is not None else None,
@@ -971,7 +1106,7 @@ def main() -> int:
             raise SystemExit(f"missing simulator output: {path}")
 
     fct_summary = summarize_fct(fct_path, flows, hotspot_nodes)
-    pfc_summary = summarize_pfc(pfc_path)
+    pfc_summary = summarize_pfc(pfc_path, topology=manifest.get("topology"))
     qlen_summary = summarize_qlen(qlen_path)
 
     summary = {
@@ -1180,6 +1315,18 @@ def main() -> int:
                     f"pg{qindex}={metrics['pause_events']} pauses/{metrics['ports_with_pause']} ports"
                 )
         lines.append("pfc_by_pg: " + (" ".join(pg_parts) if pg_parts else "none"))
+    by_hop = pfc_summary.get("by_hop", {})
+    hop_parts = []
+    for bucket in PFC_HOP_BUCKETS:
+        metrics = by_hop.get(bucket, {})
+        pauses = metrics.get("pause_events", 0)
+        if pauses == 0 and bucket == "pause_other":
+            continue
+        hop_parts.append(
+            f"{bucket}={pauses}/{metrics.get('ports_with_pause', 0)}ports"
+            f"@{(metrics.get('first_pause_ns') or 0) / 1e3:.2f}us"
+        )
+    lines.append("pfc_by_hop: " + (" ".join(hop_parts) if hop_parts else "none"))
     if pipeline_expected is not None:
         lines.append(
             "pipeline_expected: "

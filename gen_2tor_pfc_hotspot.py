@@ -26,6 +26,58 @@ DEFAULT_PREFIX = "2tor_pfc_hotspot"
 DEFAULT_PG = 3
 PIPELINE_DST_PORT_BASE = 10000
 ALLTOALL_DST_PORT_BASE = 20000
+VICTIM_DST_PORT_BASE = 30000
+NORMAL_DST_PORT_BASE = 31000
+INCAST_DST_PORT_BASE = 32000
+
+SCENARIO_LEGACY = "2tor-alltoall-pipeline"
+SCENARIO_3TIER_SPINE_INCAST = "3tier-spine-incast"
+
+
+def build_topology(args: argparse.Namespace) -> dict:
+    """Return topology metadata (node IDs, port wiring) consumed downstream
+    by write_topology, write_trace_file, the collector and the model.
+
+    For the legacy 2-tor scenario the layout is:
+        hosts 0..15  -> ToR_A (node 32)
+        hosts 16..31 -> ToR_B (node 33)
+        ToR_A <-> ToR_B (no spine)
+    Each ToR's uplink-to-other-ToR is at if_index = HOSTS_PER_TOR = 16.
+
+    For the 3-tier scenario node IDs are assigned dynamically. ToR uplink
+    ports always sit at if_index = hosts_per_tor on each ToR; spine ports
+    are P0 = to ToR0, P1 = to ToR1.
+    """
+    if getattr(args, "scenario", SCENARIO_LEGACY) == SCENARIO_LEGACY:
+        return {
+            "kind": SCENARIO_LEGACY,
+            "hosts_per_tor": [HOSTS_PER_TOR, HOSTS_PER_TOR],
+            "tor_ids": [TOR_A, TOR_B],
+            "tor_uplink_if_index": [HOSTS_PER_TOR, HOSTS_PER_TOR],
+            "spine_id": None,
+            "spine_ports_to_tor": None,
+            "total_hosts": TOTAL_HOSTS,
+            "total_nodes": TOTAL_HOSTS + 2,
+        }
+
+    hosts_tor0 = args.tier3_hosts_tor0
+    # ToR1 must have at least 2 receivers + N incast senders.
+    auto_tor1 = 2 + max(args.incast_senders, 0)
+    hosts_tor1 = max(args.tier3_hosts_tor1, auto_tor1)
+    total_hosts = hosts_tor0 + hosts_tor1
+    tor0_id = total_hosts
+    tor1_id = total_hosts + 1
+    spine_id = total_hosts + 2
+    return {
+        "kind": SCENARIO_3TIER_SPINE_INCAST,
+        "hosts_per_tor": [hosts_tor0, hosts_tor1],
+        "tor_ids": [tor0_id, tor1_id],
+        "tor_uplink_if_index": [hosts_tor0, hosts_tor1],
+        "spine_id": spine_id,
+        "spine_ports_to_tor": {tor0_id: 0, tor1_id: 1},
+        "total_hosts": total_hosts,
+        "total_nodes": total_hosts + 3,
+    }
 
 
 CONFIG_TEMPLATE = """ENABLE_QCN 1
@@ -116,6 +168,17 @@ class FlowSpec:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate mix/* files for the 2-ToR PFC hotspot experiment.")
+    parser.add_argument(
+        "--scenario",
+        choices=(SCENARIO_LEGACY, SCENARIO_3TIER_SPINE_INCAST),
+        default=SCENARIO_LEGACY,
+        help=(
+            "Which experiment to generate. '2tor-alltoall-pipeline' (default) is the "
+            "original 2-ToR direct-link topology with intra-rack all-to-all + cross-rack "
+            "pipeline. '3tier-spine-incast' inserts a spine and uses a victim + normal + "
+            "N-to-1 incast traffic pattern for the Spine-P1 PAUSE study."
+        ),
+    )
     parser.add_argument("--prefix", default=DEFAULT_PREFIX, help="File prefix under mix/.")
     parser.add_argument(
         "--alltoall-node-list",
@@ -172,10 +235,51 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--enable-trace", action="store_true", help="Enable binary packet tracing for this experiment.")
     parser.add_argument("--pfc-xoff-bytes", type=int, default=1000)
     parser.add_argument("--pfc-xon-bytes", type=int, default=300)
+    # 3-tier spine-incast scenario knobs (ignored unless --scenario 3tier-spine-incast)
+    parser.add_argument("--incast-senders", type=int, default=4,
+                        help="3tier: number of incast sender hosts on ToR1 (the swept N).")
+    parser.add_argument("--incast-flow-bytes", type=int, default=64 * 1024,
+                        help="3tier: bytes per incast sender flow.")
+    parser.add_argument("--incast-rounds", type=int, default=1,
+                        help="3tier: number of incast bursts to repeat.")
+    parser.add_argument("--incast-round-gap-us", type=float, default=2.0)
+    parser.add_argument("--victim-flow-bytes", type=int, default=4 * 1024 * 1024,
+                        help="3tier: bytes for Sender 0 -> Receiver 0 cross-ToR victim flow.")
+    parser.add_argument("--normal-flow-bytes", type=int, default=4 * 1024 * 1024,
+                        help="3tier: bytes for Sender 1 -> Receiver 1 cross-ToR normal flow.")
+    parser.add_argument("--no-victim-flow", action="store_true",
+                        help="3tier: omit the Sender 0 -> Receiver 0 cross-ToR flow.")
+    parser.add_argument("--no-normal-flow", action="store_true",
+                        help="3tier: omit the Sender 1 -> Receiver 1 cross-ToR flow.")
+    parser.add_argument("--tier3-hosts-tor0", type=int, default=2,
+                        help="3tier: hosts on ToR0 (>= 2 to fit Sender 0 and Sender 1).")
+    parser.add_argument("--tier3-hosts-tor1", type=int, default=0,
+                        help="3tier: hosts on ToR1 (auto-grown to 2 + incast_senders if smaller).")
+    parser.add_argument("--tier3-victim-base-us", type=float, default=0.0)
+    parser.add_argument("--tier3-normal-base-us", type=float, default=0.0)
+    parser.add_argument("--tier3-incast-base-us", type=float, default=2.0)
+    parser.add_argument("--tier3-pg", type=int, default=DEFAULT_PG,
+                        help="3tier: priority group for victim/normal/incast flows.")
     return parser.parse_args()
 
 
 def validate_args(args: argparse.Namespace) -> None:
+    if args.scenario == SCENARIO_3TIER_SPINE_INCAST:
+        if args.incast_senders < 0:
+            raise ValueError("--incast-senders must be >= 0")
+        if args.incast_rounds < 1:
+            raise ValueError("--incast-rounds must be >= 1")
+        if args.tier3_hosts_tor0 < 2:
+            raise ValueError("--tier3-hosts-tor0 must be >= 2 (need Sender 0 and Sender 1)")
+        if args.tier3_hosts_tor1 < 0:
+            raise ValueError("--tier3-hosts-tor1 must be >= 0")
+        if args.pfc_xon_bytes >= args.pfc_xoff_bytes:
+            raise ValueError("--pfc-xon-bytes must be smaller than --pfc-xoff-bytes")
+        if not 0 <= args.tier3_pg < 8:
+            raise ValueError("--tier3-pg must be in [0, 7]")
+        if args.link_rate_gbps <= 0:
+            raise ValueError("--link-rate-gbps must be > 0")
+        return
     if not 1 <= args.alltoall_nodes <= HOSTS_PER_TOR:
         raise ValueError("--alltoall-nodes must be in [1, 16]")
     if not 1 <= args.pipeline_nodes_per_rack <= HOSTS_PER_TOR:
@@ -379,7 +483,68 @@ def pattern_time_bounds_ns(flows: Sequence[FlowSpec], pattern: str) -> dict:
     }
 
 
+def generate_flows_3tier_spine_incast(
+    args: argparse.Namespace, topology: dict
+) -> List[FlowSpec]:
+    """Victim + normal + N-to-1 incast for the 3-tier topology.
+
+    Host id assignments (deterministic from build_topology):
+        Sender 0    = host 0                         on ToR 0
+        Sender 1    = host 1                         on ToR 0
+        Receiver 0  = host hosts_tor0                on ToR 1
+        Receiver 1  = host hosts_tor0 + 1            on ToR 1
+        Sender 2..  = hosts hosts_tor0 + 2 .. +1+N   on ToR 1 (the incast senders)
+    """
+    hosts_tor0, _ = topology["hosts_per_tor"]
+    receiver_0 = hosts_tor0
+    receiver_1 = hosts_tor0 + 1
+    incast_senders = [hosts_tor0 + 2 + i for i in range(args.incast_senders)]
+
+    flows: List[FlowSpec] = []
+    if not args.no_victim_flow and args.victim_flow_bytes > 0:
+        flows.append(FlowSpec(
+            flow_id="victim-s0-r0",
+            pattern="victim",
+            src=0,
+            dst=receiver_0,
+            size_bytes=args.victim_flow_bytes,
+            start_time_s=args.tier3_victim_base_us * 1e-6,
+            pg=args.tier3_pg,
+            dst_port=VICTIM_DST_PORT_BASE,
+        ))
+    if not args.no_normal_flow and args.normal_flow_bytes > 0:
+        flows.append(FlowSpec(
+            flow_id="normal-s1-r1",
+            pattern="normal",
+            src=1,
+            dst=receiver_1,
+            size_bytes=args.normal_flow_bytes,
+            start_time_s=args.tier3_normal_base_us * 1e-6,
+            pg=args.tier3_pg,
+            dst_port=NORMAL_DST_PORT_BASE,
+        ))
+    round_gap_s = args.incast_round_gap_us * 1e-6
+    for round_idx in range(args.incast_rounds):
+        start_time_s = args.tier3_incast_base_us * 1e-6 + round_idx * round_gap_s
+        for idx, sender in enumerate(incast_senders):
+            flows.append(FlowSpec(
+                flow_id=f"incast-r{round_idx:03d}-s{idx:02d}",
+                pattern="incast",
+                src=sender,
+                dst=receiver_0,
+                size_bytes=args.incast_flow_bytes,
+                start_time_s=start_time_s,
+                pg=args.tier3_pg,
+                dst_port=INCAST_DST_PORT_BASE + round_idx * max(args.incast_senders, 1) + idx,
+            ))
+    flows.sort(key=lambda flow: (flow.start_time_s, flow.pattern, flow.src, flow.dst))
+    return flows
+
+
 def generate_flows(args: argparse.Namespace) -> List[FlowSpec]:
+    if args.scenario == SCENARIO_3TIER_SPINE_INCAST:
+        return generate_flows_3tier_spine_incast(args, build_topology(args))
+
     flows: List[FlowSpec] = []
 
     if not args.no_pipeline:
@@ -441,8 +606,29 @@ def write_topology(path: Path, args: argparse.Namespace) -> None:
     tor_rate = f"{tor_link_rate_gbps:g}Gbps"
     delay_ms = args.link_delay_us / 1000.0
     delay = f"{delay_ms:.6f}ms"
+    topology = build_topology(args)
+    if topology["kind"] == SCENARIO_3TIER_SPINE_INCAST:
+        # 3-tier: spine + 2 ToRs + N hosts
+        hosts_tor0, hosts_tor1 = topology["hosts_per_tor"]
+        tor0_id, tor1_id = topology["tor_ids"]
+        spine_id = topology["spine_id"]
+        total_hosts = topology["total_hosts"]
+        total_nodes = topology["total_nodes"]
+        # Header: total_nodes  num_switches  switch_ids...
+        # Switches: ToR0, ToR1, Spine
+        lines = [f"{total_nodes} 3 {total_hosts} {total_hosts + 1} {total_hosts + 2}",
+                 f"{tor0_id} {tor1_id} {spine_id}"]
+        for host in range(hosts_tor0):
+            lines.append(f"{host} {tor0_id} {host_rate} {delay} 0")
+        for host in range(hosts_tor1):
+            lines.append(f"{hosts_tor0 + host} {tor1_id} {host_rate} {delay} 0")
+        # ToR<->Spine links (core)
+        lines.append(f"{tor0_id} {spine_id} {tor_rate} {delay} 0")
+        lines.append(f"{tor1_id} {spine_id} {tor_rate} {delay} 0")
+        path.write_text("\n".join(lines) + "\n", encoding="ascii")
+        return
+    # Legacy 2-ToR direct
     lines = ["34 2 33", f"{TOR_A} {TOR_B}"]
-
     for host in range(0, 16):
         lines.append(f"{host} {TOR_A} {host_rate} {delay} 0")
     for host in range(16, 32):
@@ -457,8 +643,9 @@ def write_flow_file(path: Path, flows: Sequence[FlowSpec]) -> None:
     path.write_text("\n".join(lines) + "\n", encoding="ascii")
 
 
-def write_trace_file(path: Path) -> None:
-    node_ids = list(range(TOTAL_HOSTS + 2))
+def write_trace_file(path: Path, args: argparse.Namespace) -> None:
+    topology = build_topology(args)
+    node_ids = list(range(topology["total_nodes"]))
     lines = [str(len(node_ids)), " ".join(str(node_id) for node_id in node_ids)]
     path.write_text("\n".join(lines) + "\n", encoding="ascii")
 
@@ -506,10 +693,13 @@ def write_manifest(
     stop_time_s: float,
     pipeline_expected: dict,
 ) -> None:
-    hotspot_nodes = [] if args.no_alltoall else get_hotspot_nodes(args)
+    is_3tier = args.scenario == SCENARIO_3TIER_SPINE_INCAST
+    hotspot_nodes = [] if (is_3tier or args.no_alltoall) else get_hotspot_nodes(args)
     host_link_rate_gbps, tor_link_rate_gbps = resolve_link_rates(args)
+    topology = build_topology(args)
     data = {
         "prefix": args.prefix,
+        "topology": topology,
         "scenario": {
             "alltoall_enabled": not args.no_alltoall,
             "alltoall_rack": hotspot_nodes[0] // HOSTS_PER_TOR if hotspot_nodes else None,
@@ -566,6 +756,10 @@ def write_manifest(
 
 def main() -> int:
     args = parse_args()
+    if args.scenario == SCENARIO_3TIER_SPINE_INCAST:
+        # No pipeline / no all-to-all paths run in this scenario.
+        args.no_pipeline = True
+        args.no_alltoall = True
     validate_args(args)
 
     if args.pipeline_auto_gap and not args.no_pipeline:
@@ -588,7 +782,7 @@ def main() -> int:
 
     write_topology(topo_path, args)
     write_flow_file(flow_path, flows)
-    write_trace_file(trace_path)
+    write_trace_file(trace_path, args)
     write_config(config_path, args, stop_time_s)
     write_manifest(manifest_path, args, flows, stop_time_s, pipeline_expected)
 

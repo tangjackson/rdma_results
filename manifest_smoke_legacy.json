@@ -1,0 +1,833 @@
+{
+  "prefix": "smoke_legacy",
+  "topology": {
+    "kind": "2tor-alltoall-pipeline",
+    "hosts_per_tor": [
+      16,
+      16
+    ],
+    "tor_ids": [
+      32,
+      33
+    ],
+    "tor_uplink_if_index": [
+      16,
+      16
+    ],
+    "spine_id": null,
+    "spine_ports_to_tor": null,
+    "total_hosts": 32,
+    "total_nodes": 34
+  },
+  "scenario": {
+    "alltoall_enabled": true,
+    "alltoall_rack": 1,
+    "alltoall_nodes": 8,
+    "alltoall_hotspot_nodes": [
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "alltoall_flow_bytes": 65536,
+    "alltoall_pg": 3,
+    "alltoall_rounds": 1,
+    "alltoall_base_us": 2.0,
+    "alltoall_round_gap_us": 2.0,
+    "alltoall_src_stagger_us": 0.0,
+    "pipeline_nodes_per_rack": 4,
+    "pipeline_enabled": true,
+    "pipeline_rounds": 2,
+    "pipeline_flow_bytes": 2097152,
+    "pipeline_pg": 3,
+    "pipeline_base_us": 0.0,
+    "pipeline_gap_us": 1.0,
+    "pipeline_auto_gap": false,
+    "pipeline_ring_layout": "interleaved",
+    "pipeline_ring": [
+      0,
+      16,
+      1,
+      17,
+      2,
+      18,
+      3,
+      19
+    ],
+    "pipeline_expected": {
+      "concurrent_flows_per_round": 8,
+      "cross_tor_flows_per_round": 8,
+      "tor_0_to_1_bytes_per_round": 8388608,
+      "tor_1_to_0_bytes_per_round": 8388608,
+      "host_max_tx_bytes_per_round": 2097152,
+      "host_max_rx_bytes_per_round": 2097152,
+      "aggregate_bottleneck_gbps": 199.10990934367328,
+      "per_flow_bottleneck_gbps": 24.88873866795916,
+      "critical_tor_serialize_us": 671.0886399999999,
+      "critical_host_serialize_us": 419.4304,
+      "critical_serialize_us": 671.0886399999999,
+      "one_way_path_delay_us": 3.0,
+      "ideal_round_duration_us": 674.0886399999999,
+      "configured_gap_us": 1.0,
+      "rounds_overlap_expected": true
+    },
+    "timeline": {
+      "pipeline": {
+        "first_start_ns": 0,
+        "last_start_ns": 1000
+      },
+      "alltoall": {
+        "first_start_ns": 2000,
+        "last_start_ns": 2000
+      }
+    },
+    "host_link_rate_gbps": 40.0,
+    "tor_link_rate_gbps": 100.0,
+    "min_link_rate_gbps": 40.0,
+    "link_delay_us": 1.0,
+    "buffer_size_mb": 2,
+    "enable_pfc": true,
+    "enable_trace": false,
+    "pfc_xoff_bytes": 320000,
+    "pfc_xon_bytes": 160000,
+    "stop_time_s": 0.022336668799999997
+  },
+  "files": {
+    "topology": "mix/topo_smoke_legacy.txt",
+    "flow": "mix/flow_smoke_legacy.txt",
+    "config": "mix/config_smoke_legacy.txt",
+    "trace_input": "mix/trace_smoke_legacy.txt",
+    "trace_output": "mix/mix_smoke_legacy.tr",
+    "fct": "mix/fct_smoke_legacy.txt",
+    "pfc": "mix/pfc_smoke_legacy.txt",
+    "qlen": "mix/qlen_smoke_legacy.txt",
+    "summary_txt": "mix/summary_smoke_legacy.txt",
+    "summary_json": "mix/summary_smoke_legacy.json"
+  },
+  "flows": [
+    {
+      "flow_id": "pipeline-r000-00-16",
+      "pattern": "pipeline",
+      "src": 0,
+      "dst": 16,
+      "size_bytes": 2097152,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 10000
+    },
+    {
+      "flow_id": "pipeline-r000-01-17",
+      "pattern": "pipeline",
+      "src": 1,
+      "dst": 17,
+      "size_bytes": 2097152,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 10002
+    },
+    {
+      "flow_id": "pipeline-r000-02-18",
+      "pattern": "pipeline",
+      "src": 2,
+      "dst": 18,
+      "size_bytes": 2097152,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 10004
+    },
+    {
+      "flow_id": "pipeline-r000-03-19",
+      "pattern": "pipeline",
+      "src": 3,
+      "dst": 19,
+      "size_bytes": 2097152,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 10006
+    },
+    {
+      "flow_id": "pipeline-r000-16-01",
+      "pattern": "pipeline",
+      "src": 16,
+      "dst": 1,
+      "size_bytes": 2097152,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 10001
+    },
+    {
+      "flow_id": "pipeline-r000-17-02",
+      "pattern": "pipeline",
+      "src": 17,
+      "dst": 2,
+      "size_bytes": 2097152,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 10003
+    },
+    {
+      "flow_id": "pipeline-r000-18-03",
+      "pattern": "pipeline",
+      "src": 18,
+      "dst": 3,
+      "size_bytes": 2097152,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 10005
+    },
+    {
+      "flow_id": "pipeline-r000-19-00",
+      "pattern": "pipeline",
+      "src": 19,
+      "dst": 0,
+      "size_bytes": 2097152,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 10007
+    },
+    {
+      "flow_id": "pipeline-r001-00-16",
+      "pattern": "pipeline",
+      "src": 0,
+      "dst": 16,
+      "size_bytes": 2097152,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 10008
+    },
+    {
+      "flow_id": "pipeline-r001-01-17",
+      "pattern": "pipeline",
+      "src": 1,
+      "dst": 17,
+      "size_bytes": 2097152,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 10010
+    },
+    {
+      "flow_id": "pipeline-r001-02-18",
+      "pattern": "pipeline",
+      "src": 2,
+      "dst": 18,
+      "size_bytes": 2097152,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 10012
+    },
+    {
+      "flow_id": "pipeline-r001-03-19",
+      "pattern": "pipeline",
+      "src": 3,
+      "dst": 19,
+      "size_bytes": 2097152,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 10014
+    },
+    {
+      "flow_id": "pipeline-r001-16-01",
+      "pattern": "pipeline",
+      "src": 16,
+      "dst": 1,
+      "size_bytes": 2097152,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 10009
+    },
+    {
+      "flow_id": "pipeline-r001-17-02",
+      "pattern": "pipeline",
+      "src": 17,
+      "dst": 2,
+      "size_bytes": 2097152,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 10011
+    },
+    {
+      "flow_id": "pipeline-r001-18-03",
+      "pattern": "pipeline",
+      "src": 18,
+      "dst": 3,
+      "size_bytes": 2097152,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 10013
+    },
+    {
+      "flow_id": "pipeline-r001-19-00",
+      "pattern": "pipeline",
+      "src": 19,
+      "dst": 0,
+      "size_bytes": 2097152,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 10015
+    },
+    {
+      "flow_id": "alltoall-r000-24-25",
+      "pattern": "alltoall",
+      "src": 24,
+      "dst": 25,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20000
+    },
+    {
+      "flow_id": "alltoall-r000-24-26",
+      "pattern": "alltoall",
+      "src": 24,
+      "dst": 26,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20001
+    },
+    {
+      "flow_id": "alltoall-r000-24-27",
+      "pattern": "alltoall",
+      "src": 24,
+      "dst": 27,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20002
+    },
+    {
+      "flow_id": "alltoall-r000-24-28",
+      "pattern": "alltoall",
+      "src": 24,
+      "dst": 28,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20003
+    },
+    {
+      "flow_id": "alltoall-r000-24-29",
+      "pattern": "alltoall",
+      "src": 24,
+      "dst": 29,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20004
+    },
+    {
+      "flow_id": "alltoall-r000-24-30",
+      "pattern": "alltoall",
+      "src": 24,
+      "dst": 30,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20005
+    },
+    {
+      "flow_id": "alltoall-r000-24-31",
+      "pattern": "alltoall",
+      "src": 24,
+      "dst": 31,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20006
+    },
+    {
+      "flow_id": "alltoall-r000-25-24",
+      "pattern": "alltoall",
+      "src": 25,
+      "dst": 24,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20008
+    },
+    {
+      "flow_id": "alltoall-r000-25-26",
+      "pattern": "alltoall",
+      "src": 25,
+      "dst": 26,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20009
+    },
+    {
+      "flow_id": "alltoall-r000-25-27",
+      "pattern": "alltoall",
+      "src": 25,
+      "dst": 27,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20010
+    },
+    {
+      "flow_id": "alltoall-r000-25-28",
+      "pattern": "alltoall",
+      "src": 25,
+      "dst": 28,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20011
+    },
+    {
+      "flow_id": "alltoall-r000-25-29",
+      "pattern": "alltoall",
+      "src": 25,
+      "dst": 29,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20012
+    },
+    {
+      "flow_id": "alltoall-r000-25-30",
+      "pattern": "alltoall",
+      "src": 25,
+      "dst": 30,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20013
+    },
+    {
+      "flow_id": "alltoall-r000-25-31",
+      "pattern": "alltoall",
+      "src": 25,
+      "dst": 31,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20014
+    },
+    {
+      "flow_id": "alltoall-r000-26-24",
+      "pattern": "alltoall",
+      "src": 26,
+      "dst": 24,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20016
+    },
+    {
+      "flow_id": "alltoall-r000-26-25",
+      "pattern": "alltoall",
+      "src": 26,
+      "dst": 25,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20017
+    },
+    {
+      "flow_id": "alltoall-r000-26-27",
+      "pattern": "alltoall",
+      "src": 26,
+      "dst": 27,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20018
+    },
+    {
+      "flow_id": "alltoall-r000-26-28",
+      "pattern": "alltoall",
+      "src": 26,
+      "dst": 28,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20019
+    },
+    {
+      "flow_id": "alltoall-r000-26-29",
+      "pattern": "alltoall",
+      "src": 26,
+      "dst": 29,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20020
+    },
+    {
+      "flow_id": "alltoall-r000-26-30",
+      "pattern": "alltoall",
+      "src": 26,
+      "dst": 30,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20021
+    },
+    {
+      "flow_id": "alltoall-r000-26-31",
+      "pattern": "alltoall",
+      "src": 26,
+      "dst": 31,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20022
+    },
+    {
+      "flow_id": "alltoall-r000-27-24",
+      "pattern": "alltoall",
+      "src": 27,
+      "dst": 24,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20024
+    },
+    {
+      "flow_id": "alltoall-r000-27-25",
+      "pattern": "alltoall",
+      "src": 27,
+      "dst": 25,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20025
+    },
+    {
+      "flow_id": "alltoall-r000-27-26",
+      "pattern": "alltoall",
+      "src": 27,
+      "dst": 26,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20026
+    },
+    {
+      "flow_id": "alltoall-r000-27-28",
+      "pattern": "alltoall",
+      "src": 27,
+      "dst": 28,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20027
+    },
+    {
+      "flow_id": "alltoall-r000-27-29",
+      "pattern": "alltoall",
+      "src": 27,
+      "dst": 29,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20028
+    },
+    {
+      "flow_id": "alltoall-r000-27-30",
+      "pattern": "alltoall",
+      "src": 27,
+      "dst": 30,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20029
+    },
+    {
+      "flow_id": "alltoall-r000-27-31",
+      "pattern": "alltoall",
+      "src": 27,
+      "dst": 31,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20030
+    },
+    {
+      "flow_id": "alltoall-r000-28-24",
+      "pattern": "alltoall",
+      "src": 28,
+      "dst": 24,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20032
+    },
+    {
+      "flow_id": "alltoall-r000-28-25",
+      "pattern": "alltoall",
+      "src": 28,
+      "dst": 25,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20033
+    },
+    {
+      "flow_id": "alltoall-r000-28-26",
+      "pattern": "alltoall",
+      "src": 28,
+      "dst": 26,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20034
+    },
+    {
+      "flow_id": "alltoall-r000-28-27",
+      "pattern": "alltoall",
+      "src": 28,
+      "dst": 27,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20035
+    },
+    {
+      "flow_id": "alltoall-r000-28-29",
+      "pattern": "alltoall",
+      "src": 28,
+      "dst": 29,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20036
+    },
+    {
+      "flow_id": "alltoall-r000-28-30",
+      "pattern": "alltoall",
+      "src": 28,
+      "dst": 30,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20037
+    },
+    {
+      "flow_id": "alltoall-r000-28-31",
+      "pattern": "alltoall",
+      "src": 28,
+      "dst": 31,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20038
+    },
+    {
+      "flow_id": "alltoall-r000-29-24",
+      "pattern": "alltoall",
+      "src": 29,
+      "dst": 24,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20040
+    },
+    {
+      "flow_id": "alltoall-r000-29-25",
+      "pattern": "alltoall",
+      "src": 29,
+      "dst": 25,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20041
+    },
+    {
+      "flow_id": "alltoall-r000-29-26",
+      "pattern": "alltoall",
+      "src": 29,
+      "dst": 26,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20042
+    },
+    {
+      "flow_id": "alltoall-r000-29-27",
+      "pattern": "alltoall",
+      "src": 29,
+      "dst": 27,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20043
+    },
+    {
+      "flow_id": "alltoall-r000-29-28",
+      "pattern": "alltoall",
+      "src": 29,
+      "dst": 28,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20044
+    },
+    {
+      "flow_id": "alltoall-r000-29-30",
+      "pattern": "alltoall",
+      "src": 29,
+      "dst": 30,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20045
+    },
+    {
+      "flow_id": "alltoall-r000-29-31",
+      "pattern": "alltoall",
+      "src": 29,
+      "dst": 31,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20046
+    },
+    {
+      "flow_id": "alltoall-r000-30-24",
+      "pattern": "alltoall",
+      "src": 30,
+      "dst": 24,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20048
+    },
+    {
+      "flow_id": "alltoall-r000-30-25",
+      "pattern": "alltoall",
+      "src": 30,
+      "dst": 25,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20049
+    },
+    {
+      "flow_id": "alltoall-r000-30-26",
+      "pattern": "alltoall",
+      "src": 30,
+      "dst": 26,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20050
+    },
+    {
+      "flow_id": "alltoall-r000-30-27",
+      "pattern": "alltoall",
+      "src": 30,
+      "dst": 27,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20051
+    },
+    {
+      "flow_id": "alltoall-r000-30-28",
+      "pattern": "alltoall",
+      "src": 30,
+      "dst": 28,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20052
+    },
+    {
+      "flow_id": "alltoall-r000-30-29",
+      "pattern": "alltoall",
+      "src": 30,
+      "dst": 29,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20053
+    },
+    {
+      "flow_id": "alltoall-r000-30-31",
+      "pattern": "alltoall",
+      "src": 30,
+      "dst": 31,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20054
+    },
+    {
+      "flow_id": "alltoall-r000-31-24",
+      "pattern": "alltoall",
+      "src": 31,
+      "dst": 24,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20056
+    },
+    {
+      "flow_id": "alltoall-r000-31-25",
+      "pattern": "alltoall",
+      "src": 31,
+      "dst": 25,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20057
+    },
+    {
+      "flow_id": "alltoall-r000-31-26",
+      "pattern": "alltoall",
+      "src": 31,
+      "dst": 26,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20058
+    },
+    {
+      "flow_id": "alltoall-r000-31-27",
+      "pattern": "alltoall",
+      "src": 31,
+      "dst": 27,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20059
+    },
+    {
+      "flow_id": "alltoall-r000-31-28",
+      "pattern": "alltoall",
+      "src": 31,
+      "dst": 28,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20060
+    },
+    {
+      "flow_id": "alltoall-r000-31-29",
+      "pattern": "alltoall",
+      "src": 31,
+      "dst": 29,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20061
+    },
+    {
+      "flow_id": "alltoall-r000-31-30",
+      "pattern": "alltoall",
+      "src": 31,
+      "dst": 30,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 20062
+    }
+  ]
+}

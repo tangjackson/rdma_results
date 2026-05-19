@@ -1,0 +1,51 @@
+{
+  "prefix": "smoke",
+  "scenario": {
+    "alltoall_hotspot_nodes": [24, 25, 26, 27],
+    "host_link_rate_gbps": 40.0,
+    "tor_link_rate_gbps": 100.0,
+    "min_link_rate_gbps": 40.0,
+    "buffer_size_mb": 2,
+    "enable_pfc": true,
+    "pfc_xoff_bytes": 320000,
+    "pfc_xon_bytes": 160000,
+    "stop_time_s": 0.001,
+    "alltoall_enabled": true,
+    "alltoall_rack": 1,
+    "alltoall_nodes": 4,
+    "alltoall_flow_bytes": 65536,
+    "alltoall_pg": 3,
+    "alltoall_rounds": 1,
+    "alltoall_base_us": 2.0,
+    "alltoall_round_gap_us": 2.0,
+    "alltoall_src_stagger_us": 0.0,
+    "pipeline_enabled": false,
+    "pipeline_nodes_per_rack": 8,
+    "pipeline_rounds": 1,
+    "pipeline_flow_bytes": 2097152,
+    "pipeline_pg": 3,
+    "pipeline_base_us": 0.0,
+    "pipeline_gap_us": 1.0,
+    "pipeline_auto_gap": false,
+    "pipeline_ring_layout": "interleaved",
+    "pipeline_ring": [],
+    "pipeline_expected": null,
+    "timeline": {"pipeline": {"first_start_ns": null, "last_start_ns": null}, "alltoall": {"first_start_ns": 2000, "last_start_ns": 2000}},
+    "enable_trace": false
+  },
+  "files": {
+    "topology": "topo_smoke.txt",
+    "flow": "flow_smoke.txt",
+    "config": "config_smoke.txt",
+    "trace_input": "trace_smoke.txt",
+    "trace_output": "mix_smoke.tr",
+    "fct": "fct_smoke.txt",
+    "pfc": "pfc_smoke.txt",
+    "qlen": "qlen_smoke.txt",
+    "summary_txt": "summary_smoke.txt",
+    "summary_json": "summary_smoke.json"
+  },
+  "flows": [
+    {"flow_id": "a-0", "pattern": "alltoall", "src": 24, "dst": 25, "size_bytes": 65536, "start_time_s": 2e-6, "pg": 3, "dst_port": 20000}
+  ]
+}
