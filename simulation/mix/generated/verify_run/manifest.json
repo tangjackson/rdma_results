@@ -1,0 +1,821 @@
+{
+  "scenario": {
+    "tag": "verify_run",
+    "alltoall_rack": 0,
+    "alltoall_nodes": 4,
+    "alltoall_flow_bytes": 65536,
+    "pipeline_nodes_per_rack": 16,
+    "pipeline_rounds": 2,
+    "pipeline_flow_bytes": 131072,
+    "pipeline_ring": [
+      0,
+      16,
+      1,
+      17,
+      2,
+      18,
+      3,
+      19,
+      4,
+      20,
+      5,
+      21,
+      6,
+      22,
+      7,
+      23,
+      8,
+      24,
+      9,
+      25,
+      10,
+      26,
+      11,
+      27,
+      12,
+      28,
+      13,
+      29,
+      14,
+      30,
+      15,
+      31
+    ],
+    "link_rate_gbps": 100.0,
+    "link_delay_us": 1.0,
+    "buffer_size_mb": 2,
+    "cc_mode": 1,
+    "stop_time_s": 0.0100023,
+    "simulator": "mp-rdma-simulator"
+  },
+  "files": {
+    "topology": "mix/generated/verify_run/topology.txt",
+    "flow": "mix/generated/verify_run/flow.txt",
+    "config": "mix/generated/verify_run/config.txt",
+    "fct": "mix/generated/verify_run/fct.txt",
+    "pfc": "mix/generated/verify_run/pfc.txt",
+    "qlen": "mix/generated/verify_run/qlen.txt"
+  },
+  "flows": [
+    {
+      "flow_id": "pipeline-r000-00-16",
+      "pattern": "pipeline",
+      "src": 0,
+      "dst": 16,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-01-17",
+      "pattern": "pipeline",
+      "src": 1,
+      "dst": 17,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-02-18",
+      "pattern": "pipeline",
+      "src": 2,
+      "dst": 18,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-03-19",
+      "pattern": "pipeline",
+      "src": 3,
+      "dst": 19,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-04-20",
+      "pattern": "pipeline",
+      "src": 4,
+      "dst": 20,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-05-21",
+      "pattern": "pipeline",
+      "src": 5,
+      "dst": 21,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-06-22",
+      "pattern": "pipeline",
+      "src": 6,
+      "dst": 22,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-07-23",
+      "pattern": "pipeline",
+      "src": 7,
+      "dst": 23,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-08-24",
+      "pattern": "pipeline",
+      "src": 8,
+      "dst": 24,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-09-25",
+      "pattern": "pipeline",
+      "src": 9,
+      "dst": 25,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-10-26",
+      "pattern": "pipeline",
+      "src": 10,
+      "dst": 26,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-11-27",
+      "pattern": "pipeline",
+      "src": 11,
+      "dst": 27,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-12-28",
+      "pattern": "pipeline",
+      "src": 12,
+      "dst": 28,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-13-29",
+      "pattern": "pipeline",
+      "src": 13,
+      "dst": 29,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-14-30",
+      "pattern": "pipeline",
+      "src": 14,
+      "dst": 30,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-15-31",
+      "pattern": "pipeline",
+      "src": 15,
+      "dst": 31,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-16-01",
+      "pattern": "pipeline",
+      "src": 16,
+      "dst": 1,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-17-02",
+      "pattern": "pipeline",
+      "src": 17,
+      "dst": 2,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-18-03",
+      "pattern": "pipeline",
+      "src": 18,
+      "dst": 3,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-19-04",
+      "pattern": "pipeline",
+      "src": 19,
+      "dst": 4,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-20-05",
+      "pattern": "pipeline",
+      "src": 20,
+      "dst": 5,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-21-06",
+      "pattern": "pipeline",
+      "src": 21,
+      "dst": 6,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-22-07",
+      "pattern": "pipeline",
+      "src": 22,
+      "dst": 7,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-23-08",
+      "pattern": "pipeline",
+      "src": 23,
+      "dst": 8,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-24-09",
+      "pattern": "pipeline",
+      "src": 24,
+      "dst": 9,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-25-10",
+      "pattern": "pipeline",
+      "src": 25,
+      "dst": 10,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-26-11",
+      "pattern": "pipeline",
+      "src": 26,
+      "dst": 11,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-27-12",
+      "pattern": "pipeline",
+      "src": 27,
+      "dst": 12,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-28-13",
+      "pattern": "pipeline",
+      "src": 28,
+      "dst": 13,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-29-14",
+      "pattern": "pipeline",
+      "src": 29,
+      "dst": 14,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-30-15",
+      "pattern": "pipeline",
+      "src": 30,
+      "dst": 15,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r000-31-00",
+      "pattern": "pipeline",
+      "src": 31,
+      "dst": 0,
+      "size_bytes": 131072,
+      "start_time_s": 0.0,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-00-16",
+      "pattern": "pipeline",
+      "src": 0,
+      "dst": 16,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-01-17",
+      "pattern": "pipeline",
+      "src": 1,
+      "dst": 17,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-02-18",
+      "pattern": "pipeline",
+      "src": 2,
+      "dst": 18,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-03-19",
+      "pattern": "pipeline",
+      "src": 3,
+      "dst": 19,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-04-20",
+      "pattern": "pipeline",
+      "src": 4,
+      "dst": 20,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-05-21",
+      "pattern": "pipeline",
+      "src": 5,
+      "dst": 21,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-06-22",
+      "pattern": "pipeline",
+      "src": 6,
+      "dst": 22,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-07-23",
+      "pattern": "pipeline",
+      "src": 7,
+      "dst": 23,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-08-24",
+      "pattern": "pipeline",
+      "src": 8,
+      "dst": 24,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-09-25",
+      "pattern": "pipeline",
+      "src": 9,
+      "dst": 25,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-10-26",
+      "pattern": "pipeline",
+      "src": 10,
+      "dst": 26,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-11-27",
+      "pattern": "pipeline",
+      "src": 11,
+      "dst": 27,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-12-28",
+      "pattern": "pipeline",
+      "src": 12,
+      "dst": 28,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-13-29",
+      "pattern": "pipeline",
+      "src": 13,
+      "dst": 29,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-14-30",
+      "pattern": "pipeline",
+      "src": 14,
+      "dst": 30,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-15-31",
+      "pattern": "pipeline",
+      "src": 15,
+      "dst": 31,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-16-01",
+      "pattern": "pipeline",
+      "src": 16,
+      "dst": 1,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-17-02",
+      "pattern": "pipeline",
+      "src": 17,
+      "dst": 2,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-18-03",
+      "pattern": "pipeline",
+      "src": 18,
+      "dst": 3,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-19-04",
+      "pattern": "pipeline",
+      "src": 19,
+      "dst": 4,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-20-05",
+      "pattern": "pipeline",
+      "src": 20,
+      "dst": 5,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-21-06",
+      "pattern": "pipeline",
+      "src": 21,
+      "dst": 6,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-22-07",
+      "pattern": "pipeline",
+      "src": 22,
+      "dst": 7,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-23-08",
+      "pattern": "pipeline",
+      "src": 23,
+      "dst": 8,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-24-09",
+      "pattern": "pipeline",
+      "src": 24,
+      "dst": 9,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-25-10",
+      "pattern": "pipeline",
+      "src": 25,
+      "dst": 10,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-26-11",
+      "pattern": "pipeline",
+      "src": 26,
+      "dst": 11,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-27-12",
+      "pattern": "pipeline",
+      "src": 27,
+      "dst": 12,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-28-13",
+      "pattern": "pipeline",
+      "src": 28,
+      "dst": 13,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-29-14",
+      "pattern": "pipeline",
+      "src": 29,
+      "dst": 14,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-30-15",
+      "pattern": "pipeline",
+      "src": 30,
+      "dst": 15,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "pipeline-r001-31-00",
+      "pattern": "pipeline",
+      "src": 31,
+      "dst": 0,
+      "size_bytes": 131072,
+      "start_time_s": 1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "alltoall-00-01",
+      "pattern": "alltoall",
+      "src": 0,
+      "dst": 1,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "alltoall-00-02",
+      "pattern": "alltoall",
+      "src": 0,
+      "dst": 2,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "alltoall-00-03",
+      "pattern": "alltoall",
+      "src": 0,
+      "dst": 3,
+      "size_bytes": 65536,
+      "start_time_s": 2e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "alltoall-01-00",
+      "pattern": "alltoall",
+      "src": 1,
+      "dst": 0,
+      "size_bytes": 65536,
+      "start_time_s": 2.1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "alltoall-01-02",
+      "pattern": "alltoall",
+      "src": 1,
+      "dst": 2,
+      "size_bytes": 65536,
+      "start_time_s": 2.1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "alltoall-01-03",
+      "pattern": "alltoall",
+      "src": 1,
+      "dst": 3,
+      "size_bytes": 65536,
+      "start_time_s": 2.1e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "alltoall-02-00",
+      "pattern": "alltoall",
+      "src": 2,
+      "dst": 0,
+      "size_bytes": 65536,
+      "start_time_s": 2.2e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "alltoall-02-01",
+      "pattern": "alltoall",
+      "src": 2,
+      "dst": 1,
+      "size_bytes": 65536,
+      "start_time_s": 2.2e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "alltoall-02-03",
+      "pattern": "alltoall",
+      "src": 2,
+      "dst": 3,
+      "size_bytes": 65536,
+      "start_time_s": 2.2e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "alltoall-03-00",
+      "pattern": "alltoall",
+      "src": 3,
+      "dst": 0,
+      "size_bytes": 65536,
+      "start_time_s": 2.3e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "alltoall-03-01",
+      "pattern": "alltoall",
+      "src": 3,
+      "dst": 1,
+      "size_bytes": 65536,
+      "start_time_s": 2.3e-06,
+      "pg": 3,
+      "dst_port": 100
+    },
+    {
+      "flow_id": "alltoall-03-02",
+      "pattern": "alltoall",
+      "src": 3,
+      "dst": 2,
+      "size_bytes": 65536,
+      "start_time_s": 2.3e-06,
+      "pg": 3,
+      "dst_port": 100
+    }
+  ]
+}

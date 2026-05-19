@@ -1,0 +1,25 @@
+Scenario tag: smoke_test
+Output root: mix/generated/smoke_test
+Traffic mix: hotspot all-to-all on ToR 0 over 8 hosts, cross-ToR pipeline with 32 hosts and 8 waves
+Pipeline ring: 0 16 1 17 2 18 3 19 4 20 5 21 6 22 7 23 8 24 9 25 10 26 11 27 12 28 13 29 14 30 15 31
+Generated flows: 312
+
+Latency / throughput
+  overall: 0/312 completed, avg_fct=n/a us, p95=n/a us, aggregate_goodput=n/a Gbps
+  pipeline: 0/0 completed, avg_fct=n/a us, p95=n/a us, aggregate_goodput=n/a Gbps
+  alltoall: 0/0 completed, avg_fct=n/a us, p95=n/a us, aggregate_goodput=n/a Gbps
+
+PFC
+  pause_events=0, resume_events=0, ports_with_pause=0
+
+Queue occupancy
+  max_queue=n/a KB at switch=None if=None time_ns=None
+
+Files
+  topology: mix/generated/smoke_test/topology.txt
+  flow: mix/generated/smoke_test/flow.txt
+  config: mix/generated/smoke_test/config.txt
+  pfc: mix/generated/smoke_test/pfc.txt
+  fct: mix/generated/smoke_test/fct.txt
+  qlen: mix/generated/smoke_test/qlen.txt
+  summary_json: mix/generated/smoke_test/summary.json

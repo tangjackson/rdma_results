@@ -1,0 +1,79 @@
+{
+  "scenario": {
+    "tag": "smoke_test",
+    "alltoall_rack": 0,
+    "alltoall_nodes": 8,
+    "alltoall_flow_bytes": 262144,
+    "pipeline_nodes_per_rack": 16,
+    "pipeline_rounds": 8,
+    "pipeline_flow_bytes": 1048576,
+    "pipeline_ring": [
+      0,
+      16,
+      1,
+      17,
+      2,
+      18,
+      3,
+      19,
+      4,
+      20,
+      5,
+      21,
+      6,
+      22,
+      7,
+      23,
+      8,
+      24,
+      9,
+      25,
+      10,
+      26,
+      11,
+      27,
+      12,
+      28,
+      13,
+      29,
+      14,
+      30,
+      15,
+      31
+    ],
+    "link_rate_gbps": 100.0,
+    "link_delay_us": 1.0,
+    "buffer_size_mb": 2,
+    "cc_mode": 1,
+    "stop_time_s": 0.0453054832,
+    "simulator": "mp-rdma-simulator"
+  },
+  "fct": {
+    "completed_flows": 0,
+    "expected_flows": 312,
+    "unmatched_rows": 0,
+    "patterns": {}
+  },
+  "pfc": {
+    "pause_events": 0,
+    "resume_events": 0,
+    "ports_with_pause": 0,
+    "top_paused_ports": []
+  },
+  "qlen": {
+    "max_queue_kb": null,
+    "switch_id": null,
+    "if_index": null,
+    "sample_time_ns": null
+  },
+  "files": {
+    "root": "mix/generated/smoke_test",
+    "topology": "mix/generated/smoke_test/topology.txt",
+    "flow": "mix/generated/smoke_test/flow.txt",
+    "config": "mix/generated/smoke_test/config.txt",
+    "fct": "mix/generated/smoke_test/fct.txt",
+    "pfc": "mix/generated/smoke_test/pfc.txt",
+    "qlen": "mix/generated/smoke_test/qlen.txt",
+    "summary_txt": "mix/generated/smoke_test/summary.txt"
+  }
+}

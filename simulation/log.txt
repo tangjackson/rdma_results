@@ -1,0 +1,2453 @@
+ENABLE_QCN			Yes
+USE_DYNAMIC_PFC_THRESHOLD	No
+PACKET_PAYLOAD_SIZE		1000
+TOPOLOGY_FILE			mix/topology_promo.txt
+FLOW_FILE			mix/flow_promo.txt
+TRACE_FILE			mix/trace.txt
+TRACE_OUTPUT_FILE		mix/mix.tr
+FCT_OUTPUT_FILE		mix/fct.txt
+PFC_OUTPUT_FILE				mix/pfc.txt
+SIMULATOR_STOP_TIME		4
+CC_MODE		3
+ALPHA_RESUME_INTERVAL		1
+RATE_DECREASE_INTERVAL		4
+CLAMP_TARGET_RATE		No
+RP_TIMER			900
+EWMA_GAIN			0.00390625
+FAST_RECOVERY_TIMES		1
+RATE_AI				50Mb/s
+RATE_HAI			100Mb/s
+MIN_RATE		100Mb/s
+DCTCP_RATE_AI				1000Mb/s
+ERROR_RATE_PER_LINK		0
+L2_CHUNK_SIZE			4000
+L2_ACK_INTERVAL			1
+L2_BACK_TO_ZERO			No
+HAS_WIN		1
+GLOBAL_T		1
+VAR_WIN		1
+FAST_REACT		1
+U_TARGET		0.95
+MI_THRESH		0
+INT_MULTI				1
+MULTI_RATE				0
+SAMPLE_FEEDBACK				0
+PINT_LOG_BASE				1.05
+PINT_PROB				1
+RATE_BOUND		1
+ACK_HIGH_PRIO		0
+LINK_DOWN				0 0 0
+ENABLE_TRACE				1
+KMAX_MAP				 25000000000 400 50000000000 800 100000000000 1600
+KMIN_MAP				 25000000000 100 50000000000 200 100000000000 400
+PMAX_MAP				 25000000000 0.2 50000000000 0.2 100000000000 0.2
+BUFFER_SIZE				2
+QLEN_MON_FILE				mix/qlen.txt
+QLEN_MON_START				2000000000
+QLEN_MON_END				2010000000
+Fianl shift 3
+Fianl shift 3
+Fianl shift 3
+Fianl shift 3
+Fianl shift 3
+Fianl shift 3
+Fianl shift 3
+Fianl shift 3
+Fianl shift 3
+Fianl shift 3
+Fianl shift 3
+Fianl shift 3
+Fianl shift 3
+Fianl shift 3
+Fianl shift 3
+Fianl shift 3
+Fianl shift 3
+Fianl shift 3
+maxRtt=4160 maxBdp=52000
+Running Simulation.
+Node 0 Ingress: port 2, Queue 3 used = 1092, threshold=168553
+Node 0 Ingress: port 3, Queue 3 used = 1092, threshold=168553
+Node 0 Ingress: port 6, Queue 3 used = 1092, threshold=168553
+Node 0 Ingress: port 7, Queue 3 used = 1092, threshold=168553
+Node 0 Ingress: port 2, Queue 3 used = 1092, threshold=168553
+Node 0 Ingress: port 3, Queue 3 used = 2184, threshold=168553
+Node 0 Ingress: port 6, Queue 3 used = 2184, threshold=168553
+Node 0 Ingress: port 7, Queue 3 used = 2184, threshold=168553
+Node 0 Ingress: port 2, Queue 3 used = 2184, threshold=168553
+Node 0 Ingress: port 3, Queue 3 used = 2184, threshold=168553
+Node 0 Ingress: port 6, Queue 3 used = 3276, threshold=168553
+Node 0 Ingress: port 7, Queue 3 used = 3276, threshold=168553
+Node 0 Ingress: port 2, Queue 3 used = 3276, threshold=168553
+Node 0 Ingress: port 3, Queue 3 used = 3276, threshold=168553
+Node 0 Ingress: port 6, Queue 3 used = 3276, threshold=168553
+7 3 1092 4368 4096
+Node 0 Ingress: port 7, Queue 3 used = 4368, threshold=168519
+2 3 1092 4368 4096
+Node 0 Ingress: port 2, Queue 3 used = 4368, threshold=168519
+3 3 1092 4368 4096
+Node 0 Ingress: port 3, Queue 3 used = 4368, threshold=168485
+6 3 1092 4368 4096
+Node 0 Ingress: port 6, Queue 3 used = 4368, threshold=168451
+7 3 1092 4368 4096
+Node 0 Ingress: port 7, Queue 3 used = 4368, threshold=168417
+2 3 1092 4368 4096
+Node 0 Ingress: port 2, Queue 3 used = 4368, threshold=168417
+3 3 1092 5460 4096
+Node 0 Ingress: port 3, Queue 3 used = 5460, threshold=168280
+6 3 1092 5460 4096
+Node 0 Ingress: port 6, Queue 3 used = 5460, threshold=168144
+7 3 1092 5460 4096
+Node 0 Ingress: port 7, Queue 3 used = 5460, threshold=168007
+2 3 1092 5460 4096
+Node 0 Ingress: port 2, Queue 3 used = 5460, threshold=168007
+3 3 1092 5460 4096
+Node 0 Ingress: port 3, Queue 3 used = 5460, threshold=167871
+6 3 1092 6552 4096
+Node 0 Ingress: port 6, Queue 3 used = 6552, threshold=167734
+7 3 1092 6552 4096
+Node 0 Ingress: port 7, Queue 3 used = 6552, threshold=167598
+2 3 1092 6552 4096
+Node 0 Ingress: port 2, Queue 3 used = 6552, threshold=167598
+3 3 1092 6552 4096
+Node 0 Ingress: port 3, Queue 3 used = 6552, threshold=167461
+6 3 1092 6552 4096
+Node 0 Ingress: port 6, Queue 3 used = 6552, threshold=167325
+7 3 1092 7644 4096
+Node 0 Ingress: port 7, Queue 3 used = 7644, threshold=167188
+2 3 1092 7644 4096
+Node 0 Ingress: port 2, Queue 3 used = 7644, threshold=167188
+3 3 1092 7644 4096
+Node 0 Ingress: port 3, Queue 3 used = 7644, threshold=167052
+6 3 1092 7644 4096
+Node 0 Ingress: port 6, Queue 3 used = 7644, threshold=166915
+7 3 1092 7644 4096
+Node 0 Ingress: port 7, Queue 3 used = 7644, threshold=166779
+2 3 1092 7644 4096
+Node 0 Ingress: port 2, Queue 3 used = 7644, threshold=166779
+3 3 1092 8736 4096
+Node 0 Ingress: port 3, Queue 3 used = 8736, threshold=166642
+6 3 1092 8736 4096
+Node 0 Ingress: port 6, Queue 3 used = 8736, threshold=166506
+7 3 1092 8736 4096
+Node 0 Ingress: port 7, Queue 3 used = 8736, threshold=166369
+2 3 1092 8736 4096
+Node 0 Ingress: port 2, Queue 3 used = 8736, threshold=166369
+3 3 1092 8736 4096
+Node 0 Ingress: port 3, Queue 3 used = 8736, threshold=166233
+6 3 1092 9828 4096
+Node 0 Ingress: port 6, Queue 3 used = 9828, threshold=166096
+7 3 1092 9828 4096
+Node 0 Ingress: port 7, Queue 3 used = 9828, threshold=165960
+2 3 1092 9828 4096
+Node 0 Ingress: port 2, Queue 3 used = 9828, threshold=165960
+3 3 1092 9828 4096
+Node 0 Ingress: port 3, Queue 3 used = 9828, threshold=165823
+6 3 1092 9828 4096
+Node 0 Ingress: port 6, Queue 3 used = 9828, threshold=165687
+7 3 1092 10920 4096
+Node 0 Ingress: port 7, Queue 3 used = 10920, threshold=165550
+2 3 1092 10920 4096
+Node 0 Ingress: port 2, Queue 3 used = 10920, threshold=165550
+3 3 1092 10920 4096
+Node 0 Ingress: port 3, Queue 3 used = 10920, threshold=165414
+6 3 1092 10920 4096
+Node 0 Ingress: port 6, Queue 3 used = 10920, threshold=165277
+7 3 1092 10920 4096
+Node 0 Ingress: port 7, Queue 3 used = 10920, threshold=165141
+2 3 1092 10920 4096
+Node 0 Ingress: port 2, Queue 3 used = 10920, threshold=165141
+3 3 1092 12012 4096
+Node 0 Ingress: port 3, Queue 3 used = 12012, threshold=165004
+6 3 1092 12012 4096
+Node 0 Ingress: port 6, Queue 3 used = 12012, threshold=164868
+7 3 1092 12012 4096
+Node 0 Ingress: port 7, Queue 3 used = 12012, threshold=164731
+2 3 1092 12012 4096
+Node 0 Ingress: port 2, Queue 3 used = 12012, threshold=164731
+3 3 1092 12012 4096
+Node 0 Ingress: port 3, Queue 3 used = 12012, threshold=164595
+6 3 1092 13104 4096
+Node 0 Ingress: port 6, Queue 3 used = 13104, threshold=164458
+7 3 1092 13104 4096
+Node 0 Ingress: port 7, Queue 3 used = 13104, threshold=164322
+2 3 1092 13104 4096
+Node 0 Ingress: port 2, Queue 3 used = 13104, threshold=164322
+3 3 1092 13104 4096
+Node 0 Ingress: port 3, Queue 3 used = 13104, threshold=164185
+6 3 1092 13104 4096
+Node 0 Ingress: port 6, Queue 3 used = 13104, threshold=164049
+7 3 1092 14196 4096
+Node 0 Ingress: port 7, Queue 3 used = 14196, threshold=163912
+2 3 1092 14196 4096
+Node 0 Ingress: port 2, Queue 3 used = 14196, threshold=163912
+3 3 1092 14196 4096
+Node 0 Ingress: port 3, Queue 3 used = 14196, threshold=163776
+6 3 1092 14196 4096
+Node 0 Ingress: port 6, Queue 3 used = 14196, threshold=163639
+7 3 1092 14196 4096
+Node 0 Ingress: port 7, Queue 3 used = 14196, threshold=163503
+2 3 1092 14196 4096
+Node 0 Ingress: port 2, Queue 3 used = 14196, threshold=163503
+3 3 1092 15288 4096
+Node 0 Ingress: port 3, Queue 3 used = 15288, threshold=163366
+6 3 1092 15288 4096
+Node 0 Ingress: port 6, Queue 3 used = 15288, threshold=163230
+7 3 1092 15288 4096
+Node 0 Ingress: port 7, Queue 3 used = 15288, threshold=163093
+2 3 1092 15288 4096
+Node 0 Ingress: port 2, Queue 3 used = 15288, threshold=163093
+3 3 1092 15288 4096
+Node 0 Ingress: port 3, Queue 3 used = 15288, threshold=162957
+6 3 1092 16380 4096
+Node 0 Ingress: port 6, Queue 3 used = 16380, threshold=162820
+7 3 1092 16380 4096
+Node 0 Ingress: port 7, Queue 3 used = 16380, threshold=162684
+2 3 1092 16380 4096
+Node 0 Ingress: port 2, Queue 3 used = 16380, threshold=162684
+3 3 1092 16380 4096
+Node 0 Ingress: port 3, Queue 3 used = 16380, threshold=162547
+6 3 1092 16380 4096
+Node 0 Ingress: port 6, Queue 3 used = 16380, threshold=162411
+7 3 1092 17472 4096
+Node 0 Ingress: port 7, Queue 3 used = 17472, threshold=162274
+2 3 1092 17472 4096
+Node 0 Ingress: port 2, Queue 3 used = 17472, threshold=162274
+3 3 1092 17472 4096
+Node 0 Ingress: port 3, Queue 3 used = 17472, threshold=162138
+6 3 1092 17472 4096
+Node 0 Ingress: port 6, Queue 3 used = 17472, threshold=162001
+7 3 1092 17472 4096
+Node 0 Ingress: port 7, Queue 3 used = 17472, threshold=161865
+2 3 1092 17472 4096
+Node 0 Ingress: port 2, Queue 3 used = 17472, threshold=161865
+3 3 1092 18564 4096
+Node 0 Ingress: port 3, Queue 3 used = 18564, threshold=161728
+6 3 1092 18564 4096
+Node 0 Ingress: port 6, Queue 3 used = 18564, threshold=161592
+7 3 1092 18564 4096
+Node 0 Ingress: port 7, Queue 3 used = 18564, threshold=161455
+2 3 1092 18564 4096
+Node 0 Ingress: port 2, Queue 3 used = 18564, threshold=161455
+3 3 1092 18564 4096
+Node 0 Ingress: port 3, Queue 3 used = 18564, threshold=161319
+6 3 1092 19656 4096
+Node 0 Ingress: port 6, Queue 3 used = 19656, threshold=161182
+7 3 1092 19656 4096
+Node 0 Ingress: port 7, Queue 3 used = 19656, threshold=161046
+2 3 1092 19656 4096
+Node 0 Ingress: port 2, Queue 3 used = 19656, threshold=161046
+3 3 1092 19656 4096
+Node 0 Ingress: port 3, Queue 3 used = 19656, threshold=160909
+6 3 1092 19656 4096
+Node 0 Ingress: port 6, Queue 3 used = 19656, threshold=160773
+7 3 1092 20748 4096
+Node 0 Ingress: port 7, Queue 3 used = 20748, threshold=160636
+2 3 1092 20748 4096
+Node 0 Ingress: port 2, Queue 3 used = 20748, threshold=160636
+3 3 1092 20748 4096
+Node 0 Ingress: port 3, Queue 3 used = 20748, threshold=160500
+6 3 1092 20748 4096
+Node 0 Ingress: port 6, Queue 3 used = 20748, threshold=160363
+7 3 1092 20748 4096
+Node 0 Ingress: port 7, Queue 3 used = 20748, threshold=160227
+Node 0 Egress: port 1, Queue 3 used = 81900, threshold=160363
+2 3 1092 20748 4096
+Node 0 Ingress: port 2, Queue 3 used = 20748, threshold=160227
+3 3 1092 21840 4096
+Node 0 Ingress: port 3, Queue 3 used = 21840, threshold=160090
+6 3 1092 21840 4096
+Node 0 Ingress: port 6, Queue 3 used = 21840, threshold=159954
+7 3 1092 21840 4096
+Node 0 Ingress: port 7, Queue 3 used = 21840, threshold=159817
+Node 0 Egress: port 1, Queue 3 used = 85176, threshold=159954
+2 3 1092 21840 4096
+Node 0 Ingress: port 2, Queue 3 used = 21840, threshold=159817
+3 3 1092 21840 4096
+Node 0 Ingress: port 3, Queue 3 used = 21840, threshold=159681
+6 3 1092 22932 4096
+Node 0 Ingress: port 6, Queue 3 used = 22932, threshold=159544
+7 3 1092 22932 4096
+Node 0 Ingress: port 7, Queue 3 used = 22932, threshold=159408
+Node 0 Egress: port 1, Queue 3 used = 88452, threshold=159544
+2 3 1092 22932 4096
+Node 0 Ingress: port 2, Queue 3 used = 22932, threshold=159408
+3 3 1092 22932 4096
+Node 0 Ingress: port 3, Queue 3 used = 22932, threshold=159271
+6 3 1092 22932 4096
+Node 0 Ingress: port 6, Queue 3 used = 22932, threshold=159135
+7 3 1092 24024 4096
+Node 0 Ingress: port 7, Queue 3 used = 24024, threshold=158998
+Node 0 Egress: port 1, Queue 3 used = 91728, threshold=159135
+2 3 1092 24024 4096
+Node 0 Ingress: port 2, Queue 3 used = 24024, threshold=158998
+3 3 1092 24024 4096
+Node 0 Ingress: port 3, Queue 3 used = 24024, threshold=158862
+6 3 1092 24024 4096
+Node 0 Ingress: port 6, Queue 3 used = 24024, threshold=158725
+7 3 1092 24024 4096
+Node 0 Ingress: port 7, Queue 3 used = 24024, threshold=158589
+Node 0 Egress: port 1, Queue 3 used = 95004, threshold=158725
+2 3 1092 24024 4096
+Node 0 Ingress: port 2, Queue 3 used = 24024, threshold=158589
+3 3 1092 25116 4096
+Node 0 Ingress: port 3, Queue 3 used = 25116, threshold=158452
+6 3 1092 25116 4096
+Node 0 Ingress: port 6, Queue 3 used = 25116, threshold=158316
+7 3 1092 25116 4096
+Node 0 Ingress: port 7, Queue 3 used = 25116, threshold=158179
+Node 0 Egress: port 1, Queue 3 used = 98280, threshold=158316
+2 3 1092 25116 4096
+Node 0 Ingress: port 2, Queue 3 used = 25116, threshold=158179
+3 3 1092 25116 4096
+Node 0 Ingress: port 3, Queue 3 used = 25116, threshold=158043
+6 3 1092 26208 4096
+Node 0 Ingress: port 6, Queue 3 used = 26208, threshold=157906
+7 3 1092 26208 4096
+Node 0 Ingress: port 7, Queue 3 used = 26208, threshold=157770
+Node 0 Egress: port 1, Queue 3 used = 101556, threshold=157906
+2 3 1092 26208 4096
+Node 0 Ingress: port 2, Queue 3 used = 26208, threshold=157770
+3 3 1092 26208 4096
+Node 0 Ingress: port 3, Queue 3 used = 26208, threshold=157633
+6 3 1092 26208 4096
+Node 0 Ingress: port 6, Queue 3 used = 26208, threshold=157497
+7 3 1092 27300 4096
+Node 0 Ingress: port 7, Queue 3 used = 27300, threshold=157360
+Node 0 Egress: port 1, Queue 3 used = 104832, threshold=157497
+2 3 1092 27300 4096
+Node 0 Ingress: port 2, Queue 3 used = 27300, threshold=157360
+3 3 1092 27300 4096
+Node 0 Ingress: port 3, Queue 3 used = 27300, threshold=157224
+6 3 1092 27300 4096
+Node 0 Ingress: port 6, Queue 3 used = 27300, threshold=157087
+7 3 1092 27300 4096
+Node 0 Ingress: port 7, Queue 3 used = 27300, threshold=156951
+Node 0 Egress: port 1, Queue 3 used = 108108, threshold=157087
+2 3 1092 27300 4096
+Node 0 Ingress: port 2, Queue 3 used = 27300, threshold=156951
+3 3 1092 28392 4096
+Node 0 Ingress: port 3, Queue 3 used = 28392, threshold=156814
+6 3 1092 28392 4096
+Node 0 Ingress: port 6, Queue 3 used = 28392, threshold=156678
+7 3 1092 28392 4096
+Node 0 Ingress: port 7, Queue 3 used = 28392, threshold=156541
+Node 0 Egress: port 1, Queue 3 used = 111384, threshold=156678
+2 3 1092 28392 4096
+Node 0 Ingress: port 2, Queue 3 used = 28392, threshold=156541
+3 3 1092 28392 4096
+Node 0 Ingress: port 3, Queue 3 used = 28392, threshold=156405
+6 3 1092 29484 4096
+Node 0 Ingress: port 6, Queue 3 used = 29484, threshold=156268
+7 3 1092 29484 4096
+Node 0 Ingress: port 7, Queue 3 used = 29484, threshold=156132
+Node 0 Egress: port 1, Queue 3 used = 114660, threshold=156268
+2 3 1092 29484 4096
+Node 0 Ingress: port 2, Queue 3 used = 29484, threshold=156132
+3 3 1092 29484 4096
+Node 0 Ingress: port 3, Queue 3 used = 29484, threshold=155995
+6 3 1092 29484 4096
+Node 0 Ingress: port 6, Queue 3 used = 29484, threshold=155859
+7 3 1092 30576 4096
+Node 0 Ingress: port 7, Queue 3 used = 30576, threshold=155722
+Node 0 Egress: port 1, Queue 3 used = 117936, threshold=155859
+2 3 1092 30576 4096
+Node 0 Ingress: port 2, Queue 3 used = 30576, threshold=155722
+3 3 1092 30576 4096
+Node 0 Ingress: port 3, Queue 3 used = 30576, threshold=155586
+6 3 1092 30576 4096
+Node 0 Ingress: port 6, Queue 3 used = 30576, threshold=155449
+7 3 1092 30576 4096
+Node 0 Ingress: port 7, Queue 3 used = 30576, threshold=155313
+Node 0 Egress: port 1, Queue 3 used = 121212, threshold=155449
+2 3 1092 30576 4096
+Node 0 Ingress: port 2, Queue 3 used = 30576, threshold=155313
+3 3 1092 31668 4096
+Node 0 Ingress: port 3, Queue 3 used = 31668, threshold=155176
+6 3 1092 31668 4096
+Node 0 Ingress: port 6, Queue 3 used = 31668, threshold=155040
+7 3 1092 31668 4096
+Node 0 Ingress: port 7, Queue 3 used = 31668, threshold=154903
+Node 0 Egress: port 1, Queue 3 used = 124488, threshold=155040
+2 3 1092 31668 4096
+Node 0 Ingress: port 2, Queue 3 used = 31668, threshold=154903
+3 3 1092 31668 4096
+Node 0 Ingress: port 3, Queue 3 used = 31668, threshold=154767
+6 3 1092 32760 4096
+Node 0 Ingress: port 6, Queue 3 used = 32760, threshold=154630
+7 3 1092 32760 4096
+Node 0 Ingress: port 7, Queue 3 used = 32760, threshold=154494
+Node 0 Egress: port 1, Queue 3 used = 127764, threshold=154630
+2 3 1092 32760 4096
+Node 0 Ingress: port 2, Queue 3 used = 32760, threshold=154494
+3 3 1092 32760 4096
+Node 0 Ingress: port 3, Queue 3 used = 32760, threshold=154357
+6 3 1092 32760 4096
+Node 0 Ingress: port 6, Queue 3 used = 32760, threshold=154221
+7 3 1092 33852 4096
+Node 0 Ingress: port 7, Queue 3 used = 33852, threshold=154084
+Node 0 Egress: port 1, Queue 3 used = 131040, threshold=154221
+2 3 1092 33852 4096
+Node 0 Ingress: port 2, Queue 3 used = 33852, threshold=154084
+3 3 1092 33852 4096
+Node 0 Ingress: port 3, Queue 3 used = 33852, threshold=153948
+6 3 1092 33852 4096
+Node 0 Ingress: port 6, Queue 3 used = 33852, threshold=153811
+7 3 1092 33852 4096
+Node 0 Ingress: port 7, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+2 3 1092 33852 4096
+Node 0 Ingress: port 2, Queue 3 used = 33852, threshold=153675
+3 3 1092 34944 4096
+Node 0 Ingress: port 3, Queue 3 used = 34944, threshold=153538
+6 3 1092 34944 4096
+Node 0 Ingress: port 6, Queue 3 used = 34944, threshold=153402
+7 3 1092 34944 4096
+Node 0 Ingress: port 7, Queue 3 used = 34944, threshold=153265
+Node 0 Egress: port 1, Queue 3 used = 137592, threshold=153402
+2 3 1092 34944 4096
+Node 0 Ingress: port 2, Queue 3 used = 34944, threshold=153265
+3 3 1092 34944 4096
+Node 0 Ingress: port 3, Queue 3 used = 34944, threshold=153129
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152992
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152856
+Node 0 Egress: port 1, Queue 3 used = 140868, threshold=152992
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152856
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+7 3 1092 37128 4096
+Node 0 Ingress: port 7, Queue 3 used = 37128, threshold=152446
+Node 0 Egress: port 1, Queue 3 used = 144144, threshold=152583
+2 3 1092 37128 4096
+Node 0 Ingress: port 2, Queue 3 used = 37128, threshold=152446
+3 3 1092 37128 4096
+Node 0 Ingress: port 3, Queue 3 used = 37128, threshold=152310
+6 3 1092 37128 4096
+Node 0 Ingress: port 6, Queue 3 used = 37128, threshold=152173
+7 3 1092 37128 4096
+Node 0 Ingress: port 7, Queue 3 used = 37128, threshold=152037
+Node 0 Egress: port 1, Queue 3 used = 147420, threshold=152173
+2 3 1092 37128 4096
+Node 0 Ingress: port 2, Queue 3 used = 37128, threshold=152037
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151900
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151764
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151627
+Node 0 Egress: port 1, Queue 3 used = 150696, threshold=151764
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+6 3 1092 39312 4096
+Node 0 Ingress: port 6, Queue 3 used = 39312, threshold=151354
+7 3 1092 39312 4096
+Node 0 Ingress: port 7, Queue 3 used = 39312, threshold=151218
+Node 0 Egress: port 1, Queue 3 used = 153972, threshold=151354
+2 3 1092 39312 4096
+Node 0 Ingress: port 2, Queue 3 used = 39312, threshold=151218
+3 3 1092 39312 4096
+Node 0 Ingress: port 3, Queue 3 used = 39312, threshold=151081
+6 3 1092 39312 4096
+Node 0 Ingress: port 6, Queue 3 used = 39312, threshold=150945
+7 3 1092 40404 4096
+Node 0 Ingress: port 7, Queue 3 used = 40404, threshold=150808
+Node 0 Egress: port 1, Queue 3 used = 157248, threshold=150945
+2 3 1092 40404 4096
+Node 0 Ingress: port 2, Queue 3 used = 40404, threshold=150808
+3 3 1092 40404 4096
+Node 0 Ingress: port 3, Queue 3 used = 40404, threshold=150672
+6 3 1092 40404 4096
+Node 0 Ingress: port 6, Queue 3 used = 40404, threshold=150535
+7 3 1092 40404 4096
+Node 0 Ingress: port 7, Queue 3 used = 40404, threshold=150399
+Node 0 Egress: port 1, Queue 3 used = 160524, threshold=150535
+2 3 1092 40404 4096
+Node 0 Ingress: port 2, Queue 3 used = 40404, threshold=150399
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=150262
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=150126
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149989
+Node 0 Egress: port 1, Queue 3 used = 163800, threshold=150126
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+6 3 1092 42588 4096
+Node 0 Ingress: port 6, Queue 3 used = 42588, threshold=149716
+7 3 1092 42588 4096
+Node 0 Ingress: port 7, Queue 3 used = 42588, threshold=149580
+Node 0 Egress: port 1, Queue 3 used = 167076, threshold=149716
+2 3 1092 42588 4096
+Node 0 Ingress: port 2, Queue 3 used = 42588, threshold=149580
+3 3 1092 42588 4096
+Node 0 Ingress: port 3, Queue 3 used = 42588, threshold=149443
+6 3 1092 42588 4096
+Node 0 Ingress: port 6, Queue 3 used = 42588, threshold=149307
+7 3 1092 43680 4096
+Node 0 Ingress: port 7, Queue 3 used = 43680, threshold=149170
+Node 0 Egress: port 1, Queue 3 used = 170352, threshold=149307
+2 3 1092 43680 4096
+Node 0 Ingress: port 2, Queue 3 used = 43680, threshold=149170
+3 3 1092 43680 4096
+Node 0 Ingress: port 3, Queue 3 used = 43680, threshold=149034
+6 3 1092 43680 4096
+Node 0 Ingress: port 6, Queue 3 used = 43680, threshold=148897
+7 3 1092 43680 4096
+Node 0 Ingress: port 7, Queue 3 used = 43680, threshold=148761
+Node 0 Egress: port 1, Queue 3 used = 173628, threshold=148897
+Node 0 Egress: port 1, Queue 3 used = 172536, threshold=149034
+Node 0 Egress: port 1, Queue 3 used = 171444, threshold=149170
+Node 0 Egress: port 1, Queue 3 used = 170352, threshold=149307
+Node 0 Egress: port 1, Queue 3 used = 169260, threshold=149443
+Node 0 Egress: port 1, Queue 3 used = 168168, threshold=149580
+Node 0 Egress: port 1, Queue 3 used = 167076, threshold=149716
+Node 0 Egress: port 1, Queue 3 used = 165984, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+2 3 1092 41496 4096
+Node 0 Ingress: port 2, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149853
+Node 0 Egress: port 1, Queue 3 used = 164892, threshold=149989
+Node 0 Egress: port 1, Queue 3 used = 163800, threshold=150126
+3 3 1092 41496 4096
+Node 0 Ingress: port 3, Queue 3 used = 41496, threshold=149989
+Node 0 Egress: port 1, Queue 3 used = 163800, threshold=150126
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=149989
+Node 0 Egress: port 1, Queue 3 used = 163800, threshold=150126
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=149989
+Node 0 Egress: port 1, Queue 3 used = 163800, threshold=150126
+Node 0 Egress: port 1, Queue 3 used = 162708, threshold=150262
+Node 0 Egress: port 1, Queue 3 used = 161616, threshold=150399
+6 3 1092 41496 4096
+Node 0 Ingress: port 6, Queue 3 used = 41496, threshold=150262
+Node 0 Egress: port 1, Queue 3 used = 161616, threshold=150399
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=150262
+Node 0 Egress: port 1, Queue 3 used = 161616, threshold=150399
+Node 0 Egress: port 1, Queue 3 used = 160524, threshold=150535
+Node 0 Egress: port 1, Queue 3 used = 159432, threshold=150672
+Node 0 Egress: port 1, Queue 3 used = 158340, threshold=150808
+7 3 1092 41496 4096
+Node 0 Ingress: port 7, Queue 3 used = 41496, threshold=150672
+Node 0 Egress: port 1, Queue 3 used = 158340, threshold=150808
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=150672
+Node 0 Egress: port 1, Queue 3 used = 158340, threshold=150808
+Node 0 Egress: port 1, Queue 3 used = 157248, threshold=150945
+Node 0 Egress: port 1, Queue 3 used = 156156, threshold=151081
+Node 0 Egress: port 1, Queue 3 used = 155064, threshold=151218
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151081
+Node 0 Egress: port 1, Queue 3 used = 155064, threshold=151218
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151081
+Node 0 Egress: port 1, Queue 3 used = 155064, threshold=151218
+Node 0 Egress: port 1, Queue 3 used = 153972, threshold=151354
+Node 0 Egress: port 1, Queue 3 used = 152880, threshold=151491
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151354
+Node 0 Egress: port 1, Queue 3 used = 152880, threshold=151491
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151354
+Node 0 Egress: port 1, Queue 3 used = 152880, threshold=151491
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151354
+Node 0 Egress: port 1, Queue 3 used = 152880, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 39312 4096
+Node 0 Ingress: port 2, Queue 3 used = 39312, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 40404 4096
+Node 0 Ingress: port 2, Queue 3 used = 40404, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 39312 4096
+Node 0 Ingress: port 3, Queue 3 used = 39312, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 37128 4096
+Node 0 Ingress: port 7, Queue 3 used = 37128, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 39312 4096
+Node 0 Ingress: port 2, Queue 3 used = 39312, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 39312 4096
+Node 0 Ingress: port 3, Queue 3 used = 39312, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 39312 4096
+Node 0 Ingress: port 6, Queue 3 used = 39312, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 38220 4096
+Node 0 Ingress: port 3, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 38220 4096
+Node 0 Ingress: port 6, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+3 3 1092 39312 4096
+Node 0 Ingress: port 3, Queue 3 used = 39312, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 39312 4096
+Node 0 Ingress: port 6, Queue 3 used = 39312, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 39312 4096
+Node 0 Ingress: port 7, Queue 3 used = 39312, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+6 3 1092 39312 4096
+Node 0 Ingress: port 6, Queue 3 used = 39312, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 39312 4096
+Node 0 Ingress: port 7, Queue 3 used = 39312, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+7 3 1092 40404 4096
+Node 0 Ingress: port 7, Queue 3 used = 40404, threshold=151491
+Node 0 Egress: port 1, Queue 3 used = 151788, threshold=151627
+Node 0 Egress: port 1, Queue 3 used = 150696, threshold=151764
+Node 0 Egress: port 1, Queue 3 used = 149604, threshold=151900
+Node 0 Egress: port 1, Queue 3 used = 148512, threshold=152037
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=151900
+Node 0 Egress: port 1, Queue 3 used = 148512, threshold=152037
+Node 0 Egress: port 1, Queue 3 used = 147420, threshold=152173
+Node 0 Egress: port 1, Queue 3 used = 146328, threshold=152310
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152173
+Node 0 Egress: port 1, Queue 3 used = 146328, threshold=152310
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152173
+Node 0 Egress: port 1, Queue 3 used = 146328, threshold=152310
+Node 0 Egress: port 1, Queue 3 used = 145236, threshold=152446
+Node 0 Egress: port 1, Queue 3 used = 144144, threshold=152583
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152446
+Node 0 Egress: port 1, Queue 3 used = 144144, threshold=152583
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152446
+Node 0 Egress: port 1, Queue 3 used = 144144, threshold=152583
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152446
+Node 0 Egress: port 1, Queue 3 used = 144144, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 37128 4096
+Node 0 Ingress: port 2, Queue 3 used = 37128, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 38220 4096
+Node 0 Ingress: port 2, Queue 3 used = 38220, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 37128 4096
+Node 0 Ingress: port 3, Queue 3 used = 37128, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 34944 4096
+Node 0 Ingress: port 7, Queue 3 used = 34944, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 37128 4096
+Node 0 Ingress: port 2, Queue 3 used = 37128, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 37128 4096
+Node 0 Ingress: port 3, Queue 3 used = 37128, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 37128 4096
+Node 0 Ingress: port 6, Queue 3 used = 37128, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+2 3 1092 36036 4096
+Node 0 Ingress: port 2, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 36036 4096
+Node 0 Ingress: port 3, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 36036 4096
+Node 0 Ingress: port 6, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 36036 4096
+Node 0 Ingress: port 7, Queue 3 used = 36036, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+3 3 1092 37128 4096
+Node 0 Ingress: port 3, Queue 3 used = 37128, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 37128 4096
+Node 0 Ingress: port 6, Queue 3 used = 37128, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 37128 4096
+Node 0 Ingress: port 7, Queue 3 used = 37128, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+6 3 1092 37128 4096
+Node 0 Ingress: port 6, Queue 3 used = 37128, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 37128 4096
+Node 0 Ingress: port 7, Queue 3 used = 37128, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+7 3 1092 38220 4096
+Node 0 Ingress: port 7, Queue 3 used = 38220, threshold=152583
+Node 0 Egress: port 1, Queue 3 used = 143052, threshold=152719
+Node 0 Egress: port 1, Queue 3 used = 141960, threshold=152856
+Node 0 Egress: port 1, Queue 3 used = 140868, threshold=152992
+Node 0 Egress: port 1, Queue 3 used = 139776, threshold=153129
+2 3 1092 33852 4096
+Node 0 Ingress: port 2, Queue 3 used = 33852, threshold=152992
+Node 0 Egress: port 1, Queue 3 used = 139776, threshold=153129
+Node 0 Egress: port 1, Queue 3 used = 138684, threshold=153265
+Node 0 Egress: port 1, Queue 3 used = 137592, threshold=153402
+2 3 1092 33852 4096
+Node 0 Ingress: port 2, Queue 3 used = 33852, threshold=153265
+Node 0 Egress: port 1, Queue 3 used = 137592, threshold=153402
+3 3 1092 33852 4096
+Node 0 Ingress: port 3, Queue 3 used = 33852, threshold=153265
+Node 0 Egress: port 1, Queue 3 used = 137592, threshold=153402
+Node 0 Egress: port 1, Queue 3 used = 136500, threshold=153538
+Node 0 Egress: port 1, Queue 3 used = 135408, threshold=153675
+2 3 1092 33852 4096
+Node 0 Ingress: port 2, Queue 3 used = 33852, threshold=153538
+Node 0 Egress: port 1, Queue 3 used = 135408, threshold=153675
+3 3 1092 33852 4096
+Node 0 Ingress: port 3, Queue 3 used = 33852, threshold=153538
+Node 0 Egress: port 1, Queue 3 used = 135408, threshold=153675
+6 3 1092 33852 4096
+Node 0 Ingress: port 6, Queue 3 used = 33852, threshold=153538
+Node 0 Egress: port 1, Queue 3 used = 135408, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+2 3 1092 33852 4096
+Node 0 Ingress: port 2, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+3 3 1092 33852 4096
+Node 0 Ingress: port 3, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+6 3 1092 33852 4096
+Node 0 Ingress: port 6, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+7 3 1092 33852 4096
+Node 0 Ingress: port 7, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+2 3 1092 33852 4096
+Node 0 Ingress: port 2, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+3 3 1092 33852 4096
+Node 0 Ingress: port 3, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+6 3 1092 33852 4096
+Node 0 Ingress: port 6, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+7 3 1092 33852 4096
+Node 0 Ingress: port 7, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+2 3 1092 33852 4096
+Node 0 Ingress: port 2, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+3 3 1092 33852 4096
+Node 0 Ingress: port 3, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+6 3 1092 33852 4096
+Node 0 Ingress: port 6, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+7 3 1092 33852 4096
+Node 0 Ingress: port 7, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+2 3 1092 33852 4096
+Node 0 Ingress: port 2, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+3 3 1092 33852 4096
+Node 0 Ingress: port 3, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+6 3 1092 33852 4096
+Node 0 Ingress: port 6, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+7 3 1092 33852 4096
+Node 0 Ingress: port 7, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+2 3 1092 33852 4096
+Node 0 Ingress: port 2, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+3 3 1092 33852 4096
+Node 0 Ingress: port 3, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+6 3 1092 33852 4096
+Node 0 Ingress: port 6, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+7 3 1092 33852 4096
+Node 0 Ingress: port 7, Queue 3 used = 33852, threshold=153675
+Node 0 Egress: port 1, Queue 3 used = 134316, threshold=153811
+Node 0 Egress: port 1, Queue 3 used = 133224, threshold=153948
+Node 0 Egress: port 1, Queue 3 used = 132132, threshold=154084
+Node 0 Egress: port 1, Queue 3 used = 131040, threshold=154221
+Node 0 Egress: port 1, Queue 3 used = 129948, threshold=154357
+Node 0 Egress: port 1, Queue 3 used = 128856, threshold=154494
+Node 0 Egress: port 1, Queue 3 used = 127764, threshold=154630
+Node 0 Egress: port 1, Queue 3 used = 126672, threshold=154767
+Node 0 Egress: port 1, Queue 3 used = 125580, threshold=154903
+Node 0 Egress: port 1, Queue 3 used = 124488, threshold=155040
+Node 0 Egress: port 1, Queue 3 used = 123396, threshold=155176
+Node 0 Egress: port 1, Queue 3 used = 122304, threshold=155313
+Node 0 Egress: port 1, Queue 3 used = 121212, threshold=155449
+Node 0 Egress: port 1, Queue 3 used = 120120, threshold=155586
+Node 0 Egress: port 1, Queue 3 used = 119028, threshold=155722
+Node 0 Egress: port 1, Queue 3 used = 117936, threshold=155859
+Node 0 Egress: port 1, Queue 3 used = 116844, threshold=155995
+Node 0 Egress: port 1, Queue 3 used = 115752, threshold=156132
+Node 0 Egress: port 1, Queue 3 used = 114660, threshold=156268
+Node 0 Egress: port 1, Queue 3 used = 113568, threshold=156405
+Node 0 Egress: port 1, Queue 3 used = 112476, threshold=156541
+Node 0 Egress: port 1, Queue 3 used = 111384, threshold=156678
+Node 0 Egress: port 1, Queue 3 used = 110292, threshold=156814
+Node 0 Egress: port 1, Queue 3 used = 109200, threshold=156951
+Node 0 Egress: port 1, Queue 3 used = 108108, threshold=157087
+Node 0 Egress: port 1, Queue 3 used = 107016, threshold=157224
+Node 0 Egress: port 1, Queue 3 used = 105924, threshold=157360
+Node 0 Egress: port 1, Queue 3 used = 104832, threshold=157497
+Node 0 Egress: port 1, Queue 3 used = 103740, threshold=157633
+Node 0 Egress: port 1, Queue 3 used = 102648, threshold=157770
+Node 0 Egress: port 1, Queue 3 used = 101556, threshold=157906
+Node 0 Egress: port 1, Queue 3 used = 100464, threshold=158043
+Node 0 Egress: port 1, Queue 3 used = 99372, threshold=158179
+Node 0 Egress: port 1, Queue 3 used = 98280, threshold=158316
+Node 0 Egress: port 1, Queue 3 used = 97188, threshold=158452
+Node 0 Egress: port 1, Queue 3 used = 96096, threshold=158589
+Node 0 Egress: port 1, Queue 3 used = 95004, threshold=158725
+Node 0 Egress: port 1, Queue 3 used = 93912, threshold=158862
+Node 0 Egress: port 1, Queue 3 used = 92820, threshold=158998
+Node 0 Egress: port 1, Queue 3 used = 91728, threshold=159135
+Node 0 Egress: port 1, Queue 3 used = 90636, threshold=159271
+Node 0 Egress: port 1, Queue 3 used = 89544, threshold=159408
+Node 0 Egress: port 1, Queue 3 used = 88452, threshold=159544
+Node 0 Egress: port 1, Queue 3 used = 87360, threshold=159681
+Node 0 Egress: port 1, Queue 3 used = 86268, threshold=159817
+Node 0 Egress: port 1, Queue 3 used = 85176, threshold=159954
+Node 0 Egress: port 1, Queue 3 used = 84084, threshold=160090
+Node 0 Egress: port 1, Queue 3 used = 82992, threshold=160227
+Node 0 Egress: port 1, Queue 3 used = 81900, threshold=160363
+Node 0 Egress: port 1, Queue 3 used = 80808, threshold=160500
+Node 0 Egress: port 1, Queue 3 used = 79716, threshold=160636
+Node 0 Egress: port 1, Queue 3 used = 78624, threshold=160773
+Node 0 Egress: port 1, Queue 3 used = 77532, threshold=160909
+Node 0 Egress: port 1, Queue 3 used = 76440, threshold=161046
+Node 0 Egress: port 1, Queue 3 used = 75348, threshold=161182
+Node 0 Egress: port 1, Queue 3 used = 74256, threshold=161319
+Node 0 Egress: port 1, Queue 3 used = 73164, threshold=161455
+Node 0 Egress: port 1, Queue 3 used = 72072, threshold=161592
+Node 0 Egress: port 1, Queue 3 used = 70980, threshold=161728
+Node 0 Egress: port 1, Queue 3 used = 69888, threshold=161865
+Node 0 Egress: port 1, Queue 3 used = 68796, threshold=162001
+Node 0 Egress: port 1, Queue 3 used = 67704, threshold=162138
+Node 0 Egress: port 1, Queue 3 used = 66612, threshold=162274
+Node 0 Egress: port 1, Queue 3 used = 65520, threshold=162411
+Node 0 Egress: port 1, Queue 3 used = 64428, threshold=162547
+Node 0 Egress: port 1, Queue 3 used = 63336, threshold=162684
+Node 0 Egress: port 1, Queue 3 used = 62244, threshold=162820
+Node 0 Egress: port 1, Queue 3 used = 61152, threshold=162957
+Node 0 Egress: port 1, Queue 3 used = 60060, threshold=163093
+Node 0 Egress: port 1, Queue 3 used = 58968, threshold=163230
+Node 0 Egress: port 1, Queue 3 used = 57876, threshold=163366
+Node 0 Egress: port 1, Queue 3 used = 56784, threshold=163503
+Node 0 Egress: port 1, Queue 3 used = 55692, threshold=163639
+Node 0 Egress: port 1, Queue 3 used = 54600, threshold=163776
+Node 0 Egress: port 1, Queue 3 used = 53508, threshold=163912
+Node 0 Egress: port 1, Queue 3 used = 52416, threshold=164049
+Node 0 Egress: port 1, Queue 3 used = 51324, threshold=164185
+Node 0 Egress: port 1, Queue 3 used = 50232, threshold=164322
+Node 0 Egress: port 1, Queue 3 used = 49140, threshold=164458
+Node 0 Egress: port 1, Queue 3 used = 48048, threshold=164595
+Node 0 Egress: port 1, Queue 3 used = 46956, threshold=164731
+Node 0 Egress: port 1, Queue 3 used = 45864, threshold=164868
+Node 0 Egress: port 1, Queue 3 used = 44772, threshold=165004
+Node 0 Egress: port 1, Queue 3 used = 43680, threshold=165141
+Node 0 Egress: port 1, Queue 3 used = 42588, threshold=165277
+Node 0 Egress: port 1, Queue 3 used = 41496, threshold=165414
+Node 0 Egress: port 1, Queue 3 used = 40404, threshold=165550
+Node 0 Egress: port 1, Queue 3 used = 39312, threshold=165687
+Node 0 Egress: port 1, Queue 3 used = 38220, threshold=165823
+Node 0 Egress: port 1, Queue 3 used = 37128, threshold=165960
+Node 0 Egress: port 1, Queue 3 used = 36036, threshold=166096
+Node 0 Egress: port 1, Queue 3 used = 34944, threshold=166233
+Node 0 Egress: port 1, Queue 3 used = 33852, threshold=166369
+Node 0 Egress: port 1, Queue 3 used = 32760, threshold=166506
+Node 0 Egress: port 1, Queue 3 used = 31668, threshold=166642
+Node 0 Egress: port 1, Queue 3 used = 30576, threshold=166779
+Node 0 Egress: port 1, Queue 3 used = 29484, threshold=166915
+Node 0 Egress: port 1, Queue 3 used = 28392, threshold=167052
+Node 0 Egress: port 1, Queue 3 used = 27300, threshold=167188
+Node 0 Egress: port 1, Queue 3 used = 26208, threshold=167325
+Node 0 Egress: port 1, Queue 3 used = 25116, threshold=167461
+Node 0 Egress: port 1, Queue 3 used = 24024, threshold=167598
+Node 0 Egress: port 1, Queue 3 used = 22932, threshold=167734
+Node 0 Egress: port 1, Queue 3 used = 21840, threshold=167871
+Node 0 Egress: port 1, Queue 3 used = 20748, threshold=168007
+Node 0 Egress: port 1, Queue 3 used = 19656, threshold=168144
+Node 0 Egress: port 1, Queue 3 used = 18564, threshold=168280
+Node 0 Egress: port 1, Queue 3 used = 17472, threshold=168417
+Node 0 Egress: port 1, Queue 3 used = 16380, threshold=168451
+Node 0 Egress: port 1, Queue 3 used = 15288, threshold=168485
+Node 0 Egress: port 1, Queue 3 used = 14196, threshold=168519
+Node 0 Egress: port 1, Queue 3 used = 13104, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 12012, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 10920, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 9828, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 8736, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 7644, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 6552, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 5460, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 4368, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 3276, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 2184, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 1092, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+Node 0 Egress: port 1, Queue 3 used = 0, threshold=168553
+1.52355
