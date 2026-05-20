@@ -9,6 +9,7 @@ alltoall: 0/0 completed, avg_fct=n/a us, p95_fct=n/a us, aggregate_goodput=n/a G
 pfc: pause_events=6, resume_events=6, ports_with_pause=5
 pfc_by_pg: pg3=6 pauses/5 ports
 pfc_by_hop: pause_intra_tor=3/3ports@2.00us pause_inter_tor=0/0ports@0.00us pause_tor_to_spine=2/1ports@4.00us pause_spine_to_tor=1/1ports@6.00us pause_host_to_tor=0/0ports@0.00us
+pfc_switch_vs_rank: switch_port_pauses=3 rank_port_pauses=3 switch_first_pause_us=4.00
 pipeline_expected: concurrent_flows_per_round=0 cross_tor_flows_per_round=0 aggregate_bottleneck_gbps=n/a per_flow_bottleneck_gbps=n/a critical_tor_serialize_us=0.00 critical_host_serialize_us=0.00 critical_serialize_us=0.00 one_way_path_delay_us=0.00 ideal_round_duration_us=n/a configured_gap_us=1.00 rounds_overlap_expected=no
 pipeline_vs_expected: avg_fct_pct=n/a avg_per_flow_goodput_pct=n/a aggregate_goodput_pct=n/a
 trigger_timing: first_pause_ns=2000 pipeline_first_start_ns=None alltoall_first_start_ns=None delta_vs_pipeline_us=n/a delta_vs_alltoall_us=n/a relation_to_alltoall=not_applicable

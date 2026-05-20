@@ -233,6 +233,9 @@
         "last_resume_ns": null
       }
     },
+    "pause_switch_total": 3,
+    "pause_rank_total": 3,
+    "switch_first_pause_ns": 4000,
     "first_pause_ns": 2000,
     "last_resume_ns": 6500,
     "active_window_ns": 4500,

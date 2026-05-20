@@ -534,6 +534,22 @@ def summarize_pfc(pfc_path: Path, topology: Optional[dict] = None) -> Dict[str, 
         }
         for bucket, item in by_hop.items()
     }
+    # Derived roll-ups requested for the Spine-P1 study:
+    #   pause_switch_total -> PAUSE on inter-switch (uplink/spine) ports only,
+    #                         i.e. EXCLUDING host-facing "rank" ports.
+    #   pause_rank_total   -> PAUSE on switch->host (rank) ports.
+    # pause_host_to_tor (NIC-emitted) is kept separate from both.
+    pause_switch_total = (
+        by_hop_output["pause_inter_tor"]["pause_events"]
+        + by_hop_output["pause_tor_to_spine"]["pause_events"]
+        + by_hop_output["pause_spine_to_tor"]["pause_events"]
+    )
+    pause_rank_total = by_hop_output["pause_intra_tor"]["pause_events"]
+    switch_first_candidates = [
+        by_hop_output[b]["first_pause_ns"]
+        for b in ("pause_inter_tor", "pause_tor_to_spine", "pause_spine_to_tor")
+        if by_hop_output[b]["first_pause_ns"] is not None
+    ]
     return {
         "pause_events": pause_events,
         "resume_events": resume_events,
@@ -541,6 +557,9 @@ def summarize_pfc(pfc_path: Path, topology: Optional[dict] = None) -> Dict[str, 
         "has_qindex": has_qindex,
         "by_pg": by_pg_output,
         "by_hop": by_hop_output,
+        "pause_switch_total": pause_switch_total,
+        "pause_rank_total": pause_rank_total,
+        "switch_first_pause_ns": min(switch_first_candidates) if switch_first_candidates else None,
         "first_pause_ns": first_pause_ns,
         "last_resume_ns": last_resume_ns,
         "active_window_ns": (last_resume_ns - first_pause_ns) if first_pause_ns is not None and last_resume_ns is not None else None,
@@ -1327,6 +1346,17 @@ def main() -> int:
             f"@{(metrics.get('first_pause_ns') or 0) / 1e3:.2f}us"
         )
     lines.append("pfc_by_hop: " + (" ".join(hop_parts) if hop_parts else "none"))
+    lines.append(
+        "pfc_switch_vs_rank: "
+        f"switch_port_pauses={pfc_summary.get('pause_switch_total', 0)} "
+        f"rank_port_pauses={pfc_summary.get('pause_rank_total', 0)} "
+        f"switch_first_pause_us="
+        + (
+            f"{pfc_summary['switch_first_pause_ns'] / 1e3:.2f}"
+            if pfc_summary.get("switch_first_pause_ns") is not None
+            else "n/a"
+        )
+    )
     if pipeline_expected is not None:
         lines.append(
             "pipeline_expected: "

@@ -70,9 +70,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--num-ingress", type=int, default=17)
     parser.add_argument("--metric", default="pause_tor_to_spine",
                         choices=("pause_tor_to_spine", "pause_inter_tor",
-                                 "pause_spine_to_tor", "pause_intra_tor"),
+                                 "pause_spine_to_tor", "pause_intra_tor",
+                                 "pause_switch_total", "pause_rank_total"),
                         help="Which PFC bucket to plot. Default pause_tor_to_spine "
-                             "(= PAUSE on Spine P1 in 3-tier mode).")
+                             "(= PAUSE on Spine P1 in 3-tier mode). pause_switch_total "
+                             "is all inter-switch-link pauses excluding host/rank ports.")
     parser.add_argument("--threshold-kind", default="auto",
                         choices=("auto", "n_star", "n_double_star", "both"),
                         help="Which model threshold to draw as the dashed vertical. "
@@ -88,9 +90,10 @@ def parse_args() -> argparse.Namespace:
 def select_threshold_kind(metric: str, requested: str) -> str:
     if requested != "auto":
         return requested
-    # pause_intra_tor is the only metric that the local fluid model (N*)
-    # actually predicts. Everything else is propagation; use N**.
-    return "n_star" if metric == "pause_intra_tor" else "n_double_star"
+    # Local-pause metrics (rank/host-facing ports) are what the single-port
+    # fluid model N* predicts. Inter-switch propagation metrics use N**.
+    local_metrics = ("pause_intra_tor", "pause_rank_total")
+    return "n_star" if metric in local_metrics else "n_double_star"
 
 
 def split_list(spec: Optional[str], count: int, default: float, kind: type = float) -> List[float]:

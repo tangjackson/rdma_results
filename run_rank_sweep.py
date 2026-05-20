@@ -45,10 +45,13 @@ SWEEP_FIELDS = (
     "pause_tor_to_spine",      # = "PAUSE on Spine P1" in 3-tier mode
     "pause_spine_to_tor",
     "pause_host_to_tor",
+    "pause_switch_total",      # all inter-switch link pauses, EXCLUDING rank ports
+    "pause_rank_total",        # switch->host (rank) port pauses only
     "intra_tor_first_us",
     "inter_tor_first_us",
     "tor_to_spine_first_us",
     "spine_to_tor_first_us",
+    "switch_first_pause_us",
     "pipeline_avg_fct_us",
     "pipeline_p95_fct_us",
     "pipeline_non_hotspot_avg_fct_us",
@@ -238,10 +241,16 @@ def extract_row(prefix: str, ranks: int, summary_json: Path) -> Dict[str, object
         "pause_tor_to_spine": hop("pause_tor_to_spine", "pause_events"),
         "pause_spine_to_tor": hop("pause_spine_to_tor", "pause_events"),
         "pause_host_to_tor": hop("pause_host_to_tor", "pause_events"),
+        "pause_switch_total": pfc.get("pause_switch_total", 0),
+        "pause_rank_total": pfc.get("pause_rank_total", 0),
         "intra_tor_first_us": first_us("pause_intra_tor"),
         "inter_tor_first_us": first_us("pause_inter_tor"),
         "tor_to_spine_first_us": first_us("pause_tor_to_spine"),
         "spine_to_tor_first_us": first_us("pause_spine_to_tor"),
+        "switch_first_pause_us": (
+            pfc["switch_first_pause_ns"] / 1e3
+            if pfc.get("switch_first_pause_ns") is not None else None
+        ),
         "pipeline_avg_fct_us": _safe(fct, "pipeline", "avg_fct_us"),
         "pipeline_p95_fct_us": _safe(fct, "pipeline", "p95_fct_us"),
         "pipeline_non_hotspot_avg_fct_us": _safe(fct, "pipeline_non_hotspot", "avg_fct_us"),
